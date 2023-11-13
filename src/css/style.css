@@ -1,0 +1,74 @@
+:root {
+  --font-body: Arial;
+  --font-headline: Arial;
+  --primary-color: #818d92;
+  --secondary-color: #586a6a;
+  --tertiary-color: #b9a394;
+  --quadrary-color: #d4c5c7;
+  --quintary-color: #dad4ef;
+
+  --font-base: 18px;
+  --small-font: 1em;
+
+  --large-font: 1.25em;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  max-width: 960px;
+  margin: auto;
+  padding: 2em;
+  background-color: var(--primary-color);
+}
+main {
+  background-color: var(--secondary-color);
+  max-width: 960px;
+  margin: auto;
+  padding: 2em;
+}
+
+
+.navigation {
+  display: inline-block;
+  position: relative;
+}
+.navigationMenu {
+  display: none;
+  position: absolute;
+  background-color: var(--quadrary-color);
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  min-width: 100px;
+  z-index: 1;
+  padding: .5em;
+  text-decoration: none;
+  font-size: var(--large-font);
+  line-height: 2em;
+  color: black; 
+}
+.navigationMenu a{
+    text-decoration: none;
+    color: black;
+    text-align: left;
+}
+.navigationMenu a:hover{
+    background-color: var(--tertiary-color);
+}
+.navigation:hover .navigationMenu{
+    display: block;
+}
+a.navigation :hover{
+    background-color: var(--tertiary-color);
+}
+
+form#searchBar {
+  max-width: 600px;
+  margin: auto;
+}
+input#filterInput {
+  height: 60px;
+  width: 100%;
+  font-size: var(--large-font);
+}
+
