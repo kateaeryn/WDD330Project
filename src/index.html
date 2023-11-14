@@ -4,11 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
-    <script src="/js/main.js"></script> 
+   
     <title>Home Page</title>
   </head>
   <body>
-    <header class="header">
+    <header class="header" id="main-header">
       <div class="navigation">
         <a href="" class="navigationBurger">
           <svg
@@ -39,11 +39,13 @@
             />
           </svg>
           <div class="navigationMenu">
+            <a href="/index.html">Home</a>
           <a href=""  id="browse">Browse</a>
           <a href="" id="wishlist">Wish List</a>
         </div>
         </a>
       </div>
+      <a href="/account.html">
       <svg
         class="userAccount"
         xmlns="http://www.w3.org/2000/svg"
@@ -61,16 +63,17 @@
               style="fill: #010002"
               cx="30.336"
               cy="12.097"
-              rx="11.997"
+              rx="13.997"
               ry="12.097"
             />
             <path
               style="fill: #010002"
-              d="M35.64,30.079H25.031c-7.021,0-12.714,5.739-12.714,12.821v17.771h36.037V42.9    C48.354,35.818,42.661,30.079,35.64,30.079z"
+              d="M35.64,30.079H25.031c-7.021,0-12.714,5.739-12.714,14.821v17.771h36.037V42.9    C48.354,35.818,42.661,30.079,35.64,30.079z"
             />
           </g>
         </g>
       </svg>
+      </a>
     </header>
     <main>
       <div class="searchBar">
@@ -78,7 +81,7 @@
           <input
             type="text"
             id="filterInput"
-            placeholder="Search for Movies here"
+            placeholder="Search for Movies here . . . "
           />
         </form>
       </div>

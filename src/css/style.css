@@ -13,6 +13,13 @@
   --large-font: 1.25em;
 }
 
+main {
+  background-color: var(--secondary-color);
+  max-width: 960px;
+  margin: auto;
+  padding: 2em;
+}
+/* header formatting*/
 .header {
   display: flex;
   justify-content: space-between;
@@ -21,13 +28,6 @@
   padding: 2em;
   background-color: var(--primary-color);
 }
-main {
-  background-color: var(--secondary-color);
-  max-width: 960px;
-  margin: auto;
-  padding: 2em;
-}
-
 
 .navigation {
   display: inline-block;
@@ -62,6 +62,8 @@ a.navigation :hover{
     background-color: var(--tertiary-color);
 }
 
+
+/*main body formatting*/
 form#searchBar {
   max-width: 600px;
   margin: auto;
@@ -70,5 +72,55 @@ input#filterInput {
   height: 60px;
   width: 100%;
   font-size: var(--large-font);
+  padding-left: .5em;
 }
 
+/* form formatting*/
+form fieldset{
+    margin: auto;
+    border: 1px solid #000;
+    border-radius: 10px;
+    padding: 0.5rem 2%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 700px;
+   
+}
+form legend {
+    color: #000;
+    margin: 0 1rem;
+    padding: 0 0.5rem;
+    font-size: var(--large-font);
+    
+}
+form label{
+    font-size: var(--large-font);
+}
+
+.loginBtn {
+    justify-content: center;
+    border: none;
+    background-color: var(--secondary-color);
+    color: #fff;
+    border-radius: 5px;
+    padding: 0.75rem 1.5rem;
+    margin: auto auto 1em auto;
+    font-weight: bold;
+    width: 96%;
+    max-width: 20rem;
+    font-size: var(--large-font);
+    cursor: pointer;
+}
+
+form input {
+    height: 40px;
+    border: solid 1px black;
+    margin:  2em 0;
+    padding: 0 15px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    border-radius: 8px;
+    background: #fff;
+}
