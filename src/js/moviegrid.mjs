@@ -1,30 +1,30 @@
-import { getGenreId, getMoviesByGenre } from "./services.mjs";
+import { getMoviesByGenre } from "./services.mjs";
+// import { getGenreId } from "./services.mjs";
 
-const token = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyYTdmODAwNmZiZmI0YTIxZDMyMjViZjI5NGVmZDg4NSIsInN1YiI6IjY1NTY4NmFmNTM4NjZlMDBmZjA3N2MxYSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Vel-Up8nm_jVB-3y_CXdcZ8z5oYFkl7OGJdClDbVQWY";
-const url = 'https://api.themoviedb.org/3/movie/';
-var genres;
 
-const urlId = 'https://api.themoviedb.org/3/genre/movie/list?language=en';
-
-// export async function genreId(genre) {
-//     genre = genre ?? window.location.search.split("?q=")[1];
-//     const genreList = getGenreId();
-//     console.log(genreList);
-//     if (genre == genreList) {
-//         return genre;
-//     }
-    
-// }
+// const location = window.location.href.split('=').pop();
+// console.log(location);
 
 export default async function genreList(genre) {
-    genre = genre ?? window.location.search.split("?q=")[1];
+    let id = "";
+    const response = await fetch("json/genreId.json")
+    const list = await response.json()
+    console.log(list);
     console.log(genre);
-    genres = await getMoviesByGenre(genre);
+    list.forEach(element => {
+        if (element.name === genre) {
+            console.log(element.id);
+            id = element.id;
+        } 
+    }) 
+    console.log(id);
+    let genres = await getMoviesByGenre(id);
     console.log(genres);
+    // let theId = getGenreId(genre);
+    // console.log(id);
     const grid = document.querySelector('.movie-list');
     const array = genres.results;
     const movie = array.forEach(element => {
-        // genreId(element);
         const movie_card = document.createElement('li');
         const link = document.createElement('a');
         // const picture = document.createElement('picture');
@@ -47,4 +47,3 @@ export default async function genreList(genre) {
     
 }
 
-console.log(getGenreId());
