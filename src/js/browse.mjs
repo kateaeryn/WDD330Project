@@ -1,21 +1,21 @@
 // import { getMoviesByGenre } from "./services.mjs";
 
-// const url = 'https://api.themoviedb.org/3/genre/movie/list?language=en';
-// const token = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyYTdmODAwNmZiZmI0YTIxZDMyMjViZjI5NGVmZDg4NSIsInN1YiI6IjY1NTY4NmFmNTM4NjZlMDBmZjA3N2MxYSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Vel-Up8nm_jVB-3y_CXdcZ8z5oYFkl7OGJdClDbVQWY";
+const url = 'https://api.themoviedb.org/3/genre/movie/list?language=en';
+const token = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyYTdmODAwNmZiZmI0YTIxZDMyMjViZjI5NGVmZDg4NSIsInN1YiI6IjY1NTY4NmFmNTM4NjZlMDBmZjA3N2MxYSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Vel-Up8nm_jVB-3y_CXdcZ8z5oYFkl7OGJdClDbVQWY";
 
-// export async function getMovies() {
-//     const selections = {
-//         method: 'GET',
-//         headers: {
-//             Authorization: `Bearer ${token}`,
-//             accept: 'application/json',
-//         },
-//     };
-//    return await fetch(url, selections)
-//         .then(res => res.json())
-//         .then(json => console.log(json))
-//         .catch(err => console.error('error:' + err));
-// }
+export async function getMovies() {
+    const selections = {
+        method: 'GET',
+        headers: {
+            Authorization: `Bearer ${token}`,
+            accept: 'application/json',
+        },
+    };
+   return await fetch(url, selections)
+        .then(res => res.json())
+        .then(json => console.log(json))
+        .catch(err => console.error('error:' + err));
+}
 // var genres;
 
 // function productCardTemplate(movie) {
