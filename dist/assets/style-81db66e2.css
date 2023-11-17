@@ -6,20 +6,16 @@
   --tertiary-color: #b9a394;
   --quadrary-color: #d4c5c7;
   --quintary-color: #dad4ef;
-
   --font-base: 18px;
   --small-font: 1em;
-
   --large-font: 1.25em;
 }
-
 main {
   background-color: var(--secondary-color);
   max-width: 960px;
   margin: auto;
   padding: 2em;
 }
-/* header formatting*/
 .header {
   display: flex;
   justify-content: space-between;
@@ -28,13 +24,7 @@ main {
   padding: 2em;
   background-color: var(--primary-color);
 }
-
-header {
-  display: flex;
-  justify-content: space-between;
-  position: relative;
-}
-.navigation{
+.navigation {
   display: inline-block;
   position: relative;
 }
@@ -42,7 +32,7 @@ header {
   display: none;
   position: absolute;
   background-color: var(--quadrary-color);
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 16px #0003;
   border-radius: 5px;
   min-width: 100px;
   z-index: 1;
@@ -50,11 +40,11 @@ header {
   text-decoration: none;
   font-size: var(--large-font);
   line-height: 2em;
-  color: black;
+  color: #000;
 }
 .navigationMenu a {
   text-decoration: none;
-  color: black;
+  color: #000;
   text-align: left;
 }
 .navigationMenu a:hover {
@@ -66,8 +56,6 @@ header {
 a.navigation :hover {
   background-color: var(--tertiary-color);
 }
-
-/*main body formatting*/
 form#searchBar {
   max-width: 600px;
   margin: auto;
@@ -78,8 +66,6 @@ input#filterInput {
   font-size: var(--large-font);
   padding-left: 0.5em;
 }
-
-/* form formatting*/
 form fieldset {
   margin: auto;
   border: 1px solid #000;
@@ -99,7 +85,6 @@ form legend {
 form label {
   font-size: var(--large-font);
 }
-
 .loginBtn {
   justify-content: center;
   border: none;
@@ -107,21 +92,20 @@ form label {
   color: #fff;
   border-radius: 5px;
   padding: 0.75rem 1.5rem;
-  margin: auto auto 1em auto;
-  font-weight: bold;
+  margin: auto auto 1em;
+  font-weight: 700;
   width: 96%;
   max-width: 20rem;
   font-size: var(--large-font);
   cursor: pointer;
 }
-
 form input {
   height: 40px;
   border: solid 1px black;
   margin: 2em 0;
   padding: 0 15px;
   font-size: 16px;
-  font-weight: bold;
+  font-weight: 700;
   color: #333;
   border-radius: 8px;
   background: #fff;
