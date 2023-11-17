@@ -126,3 +126,32 @@ form input {
   border-radius: 8px;
   background: #fff;
 }
+
+
+.product-list,
+.recommended-products {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: stretch;
+  list-style-type: none;
+  max-width: 1350px;
+  padding-left: 0;
+}
+
+.product-list li,
+.product-list-header li,
+.recommended-products li {
+  flex-grow: 1;
+  justify-content: center;
+}
+
+.product-list a,
+.product-list-header a,
+.recommended-products a {
+  text-decoration: none;
+  color: var(--dark-grey);
+}
+image{
+  width: 50px;
+  height: 50px;
+}
