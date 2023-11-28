@@ -128,29 +128,6 @@ form input {
 }
 
 
-.product-list,
-.recommended-products {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: stretch;
-  list-style-type: none;
-  max-width: 1350px;
-  padding-left: 0;
-}
-
-.product-list li,
-.product-list-header li,
-.recommended-products li {
-  flex-grow: 1;
-  justify-content: center;
-}
-
-.product-list a,
-.product-list-header a,
-.recommended-products a {
-  text-decoration: none;
-  color: var(--dark-grey);
-}
 image{
   width: 50px;
   height: 50px;
@@ -159,8 +136,31 @@ img{
   width: 200px;
   height: 300px;
 }
+ul{
+  list-style-type: none;
+}
+
 .movie-list{
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
+  justify-content: space-between;
+  text-align: center;
+}
+.movie-grid{
+  display: flex;
+  flex-wrap: wrap;
+ justify-content: space-between;
+  gap: 20px;
+  padding: 3%;
+  margin: auto;
+}
+.movieGenres{
+  max-width: 1080px;
+  margin: auto;
+}
+li h3{
+  max-width: 175px;
+  text-align: center;
+  margin: auto;
 }

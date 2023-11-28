@@ -15,33 +15,29 @@ export default async function genreList(genre) {
         } 
     }) 
     let genres = await getMoviesByGenre(id);
-    console.log(genres);
-    const grid = document.querySelector('.movie-list');
+    
+    const grid = document.querySelector('.movie-grid');
     const array = genres.results;
     
     
    array.map(async (movie) => {
         const movie_card = document.createElement('li');
         const link = document.createElement('a');
-        const img = document.createElement('img');
-        
-        link.href = "../movieDetail.html?movie=" + movie.id;
-       
+        const image = document.createElement('img');  
+       const title = document.createElement('h3');
+
         let posters = await getMoviePoster(movie.id);
         let posArray = posters.posters[0];
         let imageUrl = posArray.file_path;
-        console.log(posArray.file_path);
-        
-
-        
-        img.src = "https://image.tmdb.org/t/p/original" + imageUrl; 
-        img.alt = movie.title;
-       link.appendChild(img); 
-       movie_card.append(link, img);     
         
         
-       link.innerText = movie.title;
-       
+       link.href = "../movieDetail.html?movie=" + movie.id;
+        image.src = "https://image.tmdb.org/t/p/original" + imageUrl; 
+        image.alt = movie.title;
+       title.innerText = movie.title;
+       link.append(image);
+       link.append(title);
+       movie_card.append(link);  
         grid.append(movie_card);
     });
     
