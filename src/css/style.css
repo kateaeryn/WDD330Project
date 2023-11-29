@@ -31,7 +31,8 @@ body {
   margin: auto;
   padding: 2em 2em 0 2em;
   background-color: var(--primary-color);
-  color: var(--quadrary-color)
+  color: var(--quadrary-color);
+  box-shadow: 0 0 1.5px 1.5px var(--primary-color);
 }
 
 header {
@@ -190,6 +191,7 @@ ul{
   margin: auto;
   padding-bottom: 80px;
   text-align: center;
+  box-shadow: 0 0 1.5px 1.5px var(--primary-color);
 }
 .movieGenres a{
   color: var(--quintary-color);
@@ -207,7 +209,7 @@ li h3{
  color: var(--quintary-color);
  justify-items: center;
  text-align: center;
-
+box-shadow: 0 0 1.5px 1.5px var(--primary-color);
 }
 .detailPoster{
   width: 400px;
