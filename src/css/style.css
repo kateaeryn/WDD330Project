@@ -172,3 +172,7 @@ li h3{
   width: 400px;
  
 }
+.credits{
+  display: flex;
+  flex-wrap: wrap;
+}

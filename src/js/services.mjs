@@ -29,8 +29,8 @@ export async function getMoviePoster(movie){
     };
     return await fetch(posterUrl + movie + "/images?language=en", selections)
         .then(res => res.json())
-        .then(object => { return object})
-        .then(res => console.log(res));
+        .then(object => { return object });
+        
   
 }
 
@@ -42,9 +42,9 @@ export async function getMovieDetails(id) {
             Authorization: `Bearer ${token}`,
         },
     };
-    return await fetch(posterUrl + id +"?language=en-US", selections)
+    return await fetch(posterUrl + id + "?language=en-US", selections)
         .then(response => response.json())
-        .then(object => {return object})
+        .then(object => { return object })
         .catch(err => console.error(err));
 }
 

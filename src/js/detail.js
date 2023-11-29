@@ -1,4 +1,7 @@
 import { getMovieDetails, getCredits } from "./services.mjs";
+import { loadHeaderFooter } from "./utilities.mjs";
+
+loadHeaderFooter();
 
 const id = getMovieId("movie");
 console.log(id);
@@ -24,6 +27,7 @@ export function renderMovie(details, crew, cast) {
     const overview = document.querySelector(".overview");
     const crewList = document.querySelector(".crew");
     const castList = document.querySelector(".cast");
+    const creditSection = document.querySelector(".credits");
 
     title.innerHTML = details.title;
     poster.src = "https://image.tmdb.org/t/p/original" + details.poster_path;
@@ -41,11 +45,12 @@ export function renderMovie(details, crew, cast) {
         castMem.innerHTML = member.name + " playing " + member.character;
         castList.append(castMem);
     })
+    creditSection.append(crewList, castList);
     
     
     
-    
-    card.append(title, poster, tag, overview, crewList, castList);
+    card.append(title, poster, tag, overview);
+    card.append(creditSection);
 }
 
 renderMovie(details, crew, cast);
