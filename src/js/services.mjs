@@ -13,9 +13,9 @@ export async function getMoviesByGenre(genre) {
     };
     
     return await fetch(url + genre, selections)
-        .then(res => res.json());
-        // .then(json => console.log(json))
-        // .catch(err => console.error('error:' + err));
+        .then(res => res.json())
+        .then(object => {return object})
+        .catch(err => console.error('error:' + err));
 }
 
 
@@ -29,14 +29,35 @@ export async function getMoviePoster(movie){
     };
     return await fetch(posterUrl + movie + "/images?language=en", selections)
         .then(res => res.json())
-        .then(object => { return object});
-        // .then(res => console.log(res));
+        .then(object => { return object})
+        .then(res => console.log(res));
   
 }
 
-// export async function getGenreId(){
-//     const response = await fetch("json/genreId.json")
-//     const list = await response.json()
-//     return list;
-           
-// };
+export async function getMovieDetails(id) {
+    const selections = {
+        method: 'GET',
+        headers: {
+            accept: 'application/json',
+            Authorization: `Bearer ${token}`,
+        },
+    };
+    return await fetch(posterUrl + id +"?language=en-US", selections)
+        .then(response => response.json())
+        .then(object => {return object})
+        .catch(err => console.error(err));
+}
+
+export async function getCredits(id) {
+    const selections = {
+        method: 'GET',
+        headers: {
+            accept: 'application/json',
+            Authorization: `Bearer ${token}`,
+        },
+    };
+    return await fetch(posterUrl + id +"/credits?language=en-US", selections)
+        .then(response => response.json())
+        .then(object => {return object})
+        .catch(err => console.error(err));
+}
