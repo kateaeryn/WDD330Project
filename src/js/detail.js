@@ -36,13 +36,14 @@ export function renderMovie(details, crew, cast) {
     overview.innerHTML = details.overview;
     
     crew.forEach(member => {
+        
         const crewMem = document.createElement("li");
         crewMem.innerHTML = member.job + " : " + member.name;
         crewList.append(crewMem);
     });
     cast.forEach(member => {
         const castMem = document.createElement("li");
-        castMem.innerHTML = member.name + " playing " + member.character;
+        castMem.innerHTML = member.name + " as " + member.character;
         castList.append(castMem);
     })
     creditSection.append(crewList, castList);

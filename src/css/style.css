@@ -1,32 +1,37 @@
 :root {
-  --font-body: Arial;
-  --font-headline: Arial;
-  --primary-color: #818d92;
-  --secondary-color: #586a6a;
-  --tertiary-color: #b9a394;
-  --quadrary-color: #d4c5c7;
-  --quintary-color: #dad4ef;
+  --font-body: 'Legend';
+  --font-headline: 'Oxygen';
+  --font-color: #ebebeb;
+  --primary-color: #4f3073;
+  --secondary-color: #96222a;
+  --tertiary-color: #09090b;
+  
 
   --font-base: 18px;
   --small-font: 1em;
-
-  --large-font: 1.25em;
+  --med-font: 1.4em;
+  --large-font: 1.75em;
+  --xl-font: 3em;
+  font-family: 'Lexend', sans-serif;
+    font-family: 'Oxygen', sans-serif;
 }
 
-main {
-  background-color: var(--secondary-color);
-  max-width: 960px;
+body {
+  background-color: var(--tertiary-color);
+  max-width: 1080px;
   margin: auto;
   padding: 2em;
+  color: white;
 }
 /* header formatting*/
 .header {
   display: flex;
   justify-content: space-between;
-  max-width: 960px;
+  max-width: 1080px;
   margin: auto;
-  padding: 2em;
+  padding: 2em 2em 0 2em;
   background-color: var(--primary-color);
+  color: var(--quadrary-color)
 }
 
 header {
@@ -78,7 +83,21 @@ input#filterInput {
   font-size: var(--large-font);
   padding-left: 0.5em;
 }
-
+h1{
+  font-size: var(--xl-font);
+  margin: 0;
+  padding: 10px;
+}
+h2{
+  font-size: var(--large-font);
+  margin: 0;
+}
+h3{
+  font-size: var(--med-font);
+}
+h4{
+  font-size: var(--med-font);
+}
 /* form formatting*/
 form fieldset {
   margin: auto;
@@ -129,9 +148,10 @@ form input {
 
 
 .movie-list li img{
-  width: 330px;
-  height: 330px;
+  width: 300px;
+  height: 300px;
 }
+
 .movie-grid li img{
   width: 200px;
   height: 300px;
@@ -142,10 +162,17 @@ ul{
 
 .movie-list{
   display: flex;
-  gap: 20px;
+  padding: 0 70px;
+  gap: 10px;
   flex-wrap: wrap;
-  justify-content: space-between;
+  align-items: baseline;
+  justify-content: space-evenly;
   text-align: center;
+  margin: auto;
+}
+.movie-list a{
+  color: var(--quintary-color);
+  margin: 0;
 }
 .movie-grid{
   display: flex;
@@ -156,8 +183,14 @@ ul{
   margin: auto;
 }
 .movieGenres{
+  background-color: var(--primary-color);
   max-width: 1080px;
   margin: auto;
+  padding-bottom: 80px;
+  text-align: center;
+}
+.movieGenres a{
+  color: var(--quintary-color);
 }
 li h3{
   max-width: 175px;
@@ -165,8 +198,14 @@ li h3{
   margin: auto;
 }
 .detailCard{
-  display: block;
-  
+  display: grid;
+  max-width: 1080px;
+  background-color: var(--primary-color);
+ margin: auto;
+ color: var(--quintary-color);
+ justify-items: center;
+ text-align: center;
+
 }
 .detailPoster{
   width: 400px;
@@ -175,4 +214,5 @@ li h3{
 .credits{
   display: flex;
   flex-wrap: wrap;
+  line-height: 23px;
 }
