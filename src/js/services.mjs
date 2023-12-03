@@ -73,7 +73,7 @@ export async function getMovieBySearch(input) {
     };
     return await fetch(searchUrl + input +"&include_adult=false&language=en-US", selections)
         .then(response => response.json())
-        .then(response => console.log(response))
+        // .then(response => console.log(response))
         .then(object => {return object})
         .catch(err => console.error(err));
 }

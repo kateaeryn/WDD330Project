@@ -113,13 +113,15 @@ form legend {
 form label {
   font-size: var(--large-font);
 }
-.searchBar{
+.searchBar, .browseOption{
   background-color: var(--primary-color);
-  width: 540px;
+  max-width: 600px;
+  width: 534px;
   text-align: center;
   padding-top: 2em;
   padding-bottom: 1em;
   box-shadow: 0 0 2px 1.5px var(--primary-color);
+  border: solid 3px var(--tertiary-color);
 }
 form#searchBar {
   max-width: 500px;
@@ -148,15 +150,11 @@ form input {
 .index{
   display: flex;
   flex-wrap: wrap;
+ 
+  gap: -10px;
 }
-.browseOption{
-  text-align: center;
-  width: 540px;
-  background-color: var(--primary-color);
- box-shadow: 0 0 2px 1.5px var(--primary-color);
- padding-top: 2em;
-}
-.browseBtn{
+
+.browseBtn, .searchBtn{
   height : 150px;
   font-size: var(--xl-font);
   width: 400px;
@@ -164,16 +162,12 @@ form input {
   border-radius: 15px;
   background-color: var(--quadrary-color);
 }
-.searchBtn{
-  background-color: var(--quadrary-color);
-  height: 60px;
-  font-size: var(--large-font);
-  padding: .5em 1em;
-  border-radius: 15px;
-  font-weight: 540;
+
+
+.search{
+  background-color: var(--primary-color);
+  text-align: center;
 }
-
-
 .movie-list li img{
   width: 300px;
   height: 300px;

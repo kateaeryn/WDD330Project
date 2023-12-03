@@ -1,11 +1,13 @@
 import { getMovieBySearch } from "./services.mjs";
+import { getMoviePoster } from "./services.mjs";
 
 export default async function searchInput(input) {
     console.log(input);
     let list =  await getMovieBySearch(input);
-    // let array = [list.results];
     console.log(list);
-    const grid = document.querySelector('.movie-grid');
+    let array = list.results;
+    
+    const grid = document.querySelector('.search-movie-grid');
     
         
    array.map(async (input) => {
@@ -14,15 +16,15 @@ export default async function searchInput(input) {
         const image = document.createElement('img');  
        const title = document.createElement('h3');
 
-        let posters = await getMoviePoster(movie.id);
+        let posters = await getMoviePoster(input.id);
         let posArray = posters.posters[0];
         let imageUrl = posArray.file_path;
         
         
-       link.href = "../movieDetail.html?movie=" + movie.id;
+       link.href = "../movieDetail.html?movie=" + input.id;
         image.src = "https://image.tmdb.org/t/p/original" + imageUrl; 
-        image.alt = movie.title;
-       title.innerText = movie.title;
+        image.alt = input.title;
+       title.innerText = input.title;
        link.append(image);
        link.append(title);
        movie_card.append(link);  

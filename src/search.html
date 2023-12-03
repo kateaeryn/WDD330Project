@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="/js/search.js" type="module"></script>
+    <title>Browse Movies</title>
+</head>
+
+<body>
+    <header class="header" id="main-header"></header>
+<div class="search">
+    <h2 class="searchInstructions">Search Movies</h2>
+    <p class="subinstructions">Search by keyword, actor/actress first and last name, </br>or movie title to find your
+        next movie night!</p>
+    <form role="search" id="searchBar">
+        <input type="text" id="searchMovie" placeholder="Movie Title" />
+        <input type="text" id="searchPerson" placeholder="First and Last Name" />
+        <button type="submit" id="searchNow">Search Now</button>
+    </form>
+    <section class="searchResults">
+       
+        <ul class="search-movie-grid"></ul>
+    </section>
+</body>
+<footer class="footer"></footer>
+
+</html>
