@@ -9,19 +9,26 @@
   </head>
   <body>
     <header class="header" id="main-header"></header>
-      <div class="searchBar">
+    <div class="index">
+    <div class="searchBar">
+        <h2 class="instructions">Search Movies</h2>
+        <p class="subinstructions">Search by keyword, actor/actress first and last name, </br>or movie title to find your next movie night!</p>
         <form role="search" id="searchBar">
           <input
             type="text"
-            id="filterInput"
-            placeholder="Search for Movies here . . . "
+            id="searchMovie"
+            placeholder="Movie Title" 
           />
+          <input type="text" id="searchPerson" placeholder="First and Last Name" />
         </form>
+        <button type="submit" class="searchBtn">Search Now</button>
       </div>
-      <div class="recommended">
-        <div class="movies"></div>
-      </div>
-    
+      
+    <div class="browseOption">
+      <h2 class="browseHeader">Browse Movies</h2>
+      <a href ="/browse.html"><button class="browseBtn">Browse</br> Here</button></a>
+</div>
+    </div>
   </body>
   <footer class="footer"></footer>
 </html>

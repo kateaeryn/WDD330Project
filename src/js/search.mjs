@@ -1,26 +1,14 @@
-import { getMoviesByGenre } from "./services.mjs";
-import { getMoviePoster } from "./services.mjs";
+import { getMovieBySearch } from "./services.mjs";
 
-
-// const location = window.location.href.split('=').pop();
-// console.log(location);
-
-export default async function genreList(genre) {
-    let id = "";
-    const response = await fetch("json/genreId.json")
-    const list = await response.json()
-    list.forEach(element => {
-        if (element.name === genre) {
-            id = element.id;
-        } 
-    }) 
-    let genres = await getMoviesByGenre(id);
-    
+export default async function searchInput(input) {
+    console.log(input);
+    let list =  await getMovieBySearch(input);
+    // let array = [list.results];
+    console.log(list);
     const grid = document.querySelector('.movie-grid');
-    const array = genres.results;
-    console.log(genres);
     
-   array.map(async (movie) => {
+        
+   array.map(async (input) => {
         const movie_card = document.createElement('li');
         const link = document.createElement('a');
         const image = document.createElement('img');  
@@ -42,4 +30,3 @@ export default async function genreList(genre) {
     });
     
 }
-

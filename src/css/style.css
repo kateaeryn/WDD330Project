@@ -5,6 +5,7 @@
   --primary-color: #4f3073;
   --secondary-color: #96222a;
   --tertiary-color: #09090b;
+  --quadrary-color: #eca72c;
   
 
   --font-base: 18px;
@@ -76,16 +77,7 @@ a.navigation :hover {
 }
 
 /*main body formatting*/
-form#searchBar {
-  max-width: 600px;
-  margin: auto;
-}
-input#filterInput {
-  height: 60px;
-  width: 100%;
-  font-size: var(--large-font);
-  padding-left: 0.5em;
-}
+
 h1{
   font-size: var(--xl-font);
   margin: 0;
@@ -110,7 +102,7 @@ form fieldset {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  max-width: 700px;
+  max-width: 500px;
 }
 form legend {
   color: #000;
@@ -121,32 +113,64 @@ form legend {
 form label {
   font-size: var(--large-font);
 }
-
-.loginBtn {
-  justify-content: center;
-  border: none;
-  background-color: var(--secondary-color);
-  color: #fff;
-  border-radius: 5px;
-  padding: 0.75rem 1.5rem;
-  margin: auto auto 1em auto;
-  font-weight: bold;
-  width: 96%;
-  max-width: 20rem;
-  font-size: var(--large-font);
-  cursor: pointer;
+.searchBar{
+  background-color: var(--primary-color);
+  width: 540px;
+  text-align: center;
+  padding-top: 2em;
+  padding-bottom: 1em;
+  box-shadow: 0 0 2px 1.5px var(--primary-color);
 }
-
+form#searchBar {
+  max-width: 500px;
+  margin: auto ;
+}
+input#searchMovie, input#searchPerson {
+  height: 60px;
+  width: 85%;
+  font-size: var(--large-font);
+  padding-left: .5em;
+  
+}
 form input {
-  height: 40px;
   border: solid 1px black;
-  margin: 2em 0;
+  margin: 1em 0;
   padding: 0 15px;
   font-size: 16px;
   font-weight: bold;
   color: #333;
   border-radius: 8px;
   background: #fff;
+  
+}
+
+/* index page*/
+.index{
+  display: flex;
+  flex-wrap: wrap;
+}
+.browseOption{
+  text-align: center;
+  width: 540px;
+  background-color: var(--primary-color);
+ box-shadow: 0 0 2px 1.5px var(--primary-color);
+ padding-top: 2em;
+}
+.browseBtn{
+  height : 150px;
+  font-size: var(--xl-font);
+  width: 400px;
+  margin: 1.5em 1em;
+  border-radius: 15px;
+  background-color: var(--quadrary-color);
+}
+.searchBtn{
+  background-color: var(--quadrary-color);
+  height: 60px;
+  font-size: var(--large-font);
+  padding: .5em 1em;
+  border-radius: 15px;
+  font-weight: 540;
 }
 
 
