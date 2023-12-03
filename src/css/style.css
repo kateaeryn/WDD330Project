@@ -127,7 +127,7 @@ form#searchBar {
   max-width: 500px;
   margin: auto ;
 }
-input#searchMovie, input#searchPerson {
+input#MovieInput, input#PersonInput {
   height: 60px;
   width: 85%;
   font-size: var(--large-font);
@@ -163,11 +163,28 @@ form input {
   background-color: var(--quadrary-color);
 }
 
-
+/*search page*/
 .search{
   background-color: var(--primary-color);
   text-align: center;
+  
 }
+
+.search-movie-grid li img{
+width: 300px;
+}
+.search-movie-grid{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+justify-content: space-evenly;
+padding-left: 0;
+
+}
+.search-movie-grid a{
+  color: var(--font-color);
+}
+/* movie genre results*/
 .movie-list li img{
   width: 300px;
   height: 300px;
@@ -192,7 +209,7 @@ ul{
   margin: auto;
 }
 .movie-list a{
-  color: var(--quintary-color);
+  color: var(--tertiary-color);
   margin: 0;
 }
 .movie-grid{
@@ -214,6 +231,8 @@ ul{
 .movieGenres a{
   color: var(--quintary-color);
 }
+
+/* movie detail cards*/
 li h3{
   max-width: 175px;
   text-align: center;

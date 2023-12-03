@@ -1,13 +1,25 @@
 import { loadHeaderFooter } from "./utilities.mjs";
-import searchInput from "./search.mjs";
+import { searchInput, personInput } from "./search.mjs";
+
 
 loadHeaderFooter();
 
 
-document.querySelector("#searchNow").addEventListener("click", function () {
- let input = document.getElementById("searchMovie").value;   
-    if (input !== null) {
-        searchInput(input)
+document.querySelector("#searchMovie").addEventListener("click", (e)=> {
+    e.preventDefault();
+    let input = document.getElementById("MovieInput").value;   
+   
+        searchInput(input);
+    
         
-    } 
+    
+});
+
+document.querySelector("#searchPerson").addEventListener("click", (e)=> {
+    e.preventDefault();
+    let input = document.getElementById("PersonInput").value;   
+    console.log(input);
+    personInput(input);
+        
+    
 });
