@@ -1,20 +1,20 @@
+
 :root {
-  --font-body: 'Legend';
-  --font-headline: 'Oxygen';
+  --font-body: "Legend";
+  --font-headline: "Oxygen";
   --font-color: #ebebeb;
   --primary-color: #4f3073;
   --secondary-color: #96222a;
   --tertiary-color: #09090b;
   --quadrary-color: #eca72c;
-  
 
   --font-base: 18px;
   --small-font: 1em;
   --med-font: 1.4em;
   --large-font: 1.75em;
   --xl-font: 3em;
-  font-family: 'Lexend', sans-serif;
-    font-family: 'Oxygen', sans-serif;
+  font-family: "Lexend", sans-serif;
+  font-family: "Oxygen", sans-serif;
 }
 
 body {
@@ -41,7 +41,7 @@ header {
   justify-content: space-between;
   position: relative;
 }
-.navigation{
+.navigation {
   display: inline-block;
   position: relative;
 }
@@ -78,19 +78,19 @@ a.navigation :hover {
 
 /*main body formatting*/
 
-h1{
+h1 {
   font-size: var(--xl-font);
   margin: 0;
   padding: 10px;
 }
-h2{
+h2 {
   font-size: var(--large-font);
   margin: 0;
 }
-h3{
+h3 {
   font-size: var(--med-font);
 }
-h4{
+h4 {
   font-size: var(--med-font);
 }
 /* form formatting*/
@@ -113,7 +113,8 @@ form legend {
 form label {
   font-size: var(--large-font);
 }
-.searchBar, .browseOption{
+.searchBar,
+.browseOption {
   background-color: var(--primary-color);
   max-width: 600px;
   width: 534px;
@@ -125,14 +126,14 @@ form label {
 }
 form#searchBar {
   max-width: 500px;
-  margin: auto ;
+  margin: auto;
 }
-input#MovieInput, input#PersonInput {
+input#MovieInput,
+input#PersonInput {
   height: 60px;
   width: 85%;
   font-size: var(--large-font);
-  padding-left: .5em;
-  
+  padding-left: 0.5em;
 }
 form input {
   border: solid 1px black;
@@ -143,19 +144,19 @@ form input {
   color: #333;
   border-radius: 8px;
   background: #fff;
-  
 }
 
 /* index page*/
-.index{
+.index {
   display: flex;
   flex-wrap: wrap;
- 
+
   gap: -10px;
 }
 
-.browseBtn, .searchBtn{
-  height : 150px;
+.browseBtn,
+.searchBtn {
+  height: 150px;
   font-size: var(--xl-font);
   width: 400px;
   margin: 1.5em 1em;
@@ -164,53 +165,53 @@ form input {
 }
 
 /*search page*/
-.search{
+.search {
   background-color: var(--primary-color);
   text-align: center;
   box-shadow: 0 0 2px 1.5px var(--primary-color);
 }
 
-.search-movie-grid li img{
-width: 300px;
+.search-movie-grid li img {
+  width: 300px;
 }
-.search-movie-grid{
+.search-movie-grid {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-justify-content: space-evenly;
-padding-left: 0;
-
+  justify-content: space-evenly;
+  padding-left: 0;
 }
-.search-movie-grid a{
+.search-movie-grid a {
   color: var(--font-color);
 }
 
-#searchMovie, #searchPerson{
+#searchMovie,
+#searchPerson {
   height: 60px;
-    font-size: var(--med-font);
-    width: 250px;
-    margin: .5em 1.5em;
-    border-radius: 15px;
-    background-color: var(--quadrary-color);
+  font-size: var(--med-font);
+  width: 250px;
+  margin: 0.5em 1.5em;
+  border-radius: 15px;
+  background-color: var(--quadrary-color);
 }
-.searchResults{
+.searchResults {
   margin-top: 3em;
 }
 /* movie genre results*/
-.movie-list li img{
+.movie-list li img {
   width: 300px;
   height: 300px;
 }
 
-.movie-grid li img{
+.movie-grid li img {
   width: 200px;
   height: 300px;
 }
-ul{
+ul {
   list-style-type: none;
 }
 
-.movie-list{
+.movie-list {
   display: flex;
   padding: 0 70px;
   gap: 10px;
@@ -220,19 +221,19 @@ ul{
   text-align: center;
   margin: auto;
 }
-.movie-list a{
+.movie-list a {
   color: var(--tertiary-color);
   margin: 0;
 }
-.movie-grid{
+.movie-grid {
   display: flex;
   flex-wrap: wrap;
- justify-content: space-between;
+  justify-content: space-between;
   gap: 20px;
   padding: 3%;
   margin: auto;
 }
-.movieGenres{
+.movieGenres {
   background-color: var(--primary-color);
   max-width: 1080px;
   margin: auto;
@@ -240,40 +241,39 @@ ul{
   text-align: center;
   box-shadow: 0 0 1.5px 1.5px var(--primary-color);
 }
-.movieGenres a{
+.movieGenres a {
   color: var(--quintary-color);
 }
 
 /* movie detail cards*/
-li h3{
+li h3 {
   max-width: 175px;
   text-align: center;
   margin: auto;
 }
-.detailCard{
+.detailCard {
   display: grid;
   max-width: 1080px;
   background-color: var(--primary-color);
- margin: auto;
- color: var(--quintary-color);
- justify-items: center;
- text-align: center;
-box-shadow: 0 0 1.5px 1.5px var(--primary-color);
+  margin: auto;
+  color: var(--quintary-color);
+  justify-items: center;
+  text-align: center;
+  box-shadow: 0 0 1.5px 1.5px var(--primary-color);
 }
-.detailPoster{
+.detailPoster {
   width: 400px;
- 
 }
-.credits{
+.credits {
   display: flex;
   flex-wrap: wrap;
   line-height: 23px;
 }
-.wishlistBtn{
+.wishlistBtn {
   height: 60px;
-    font-size: var(--med-font);
-    width: 250px;
-    margin: .5em 1.5em;
-    border-radius: 15px;
-    background-color: var(--quadrary-color);
-  }
+  font-size: var(--med-font);
+  width: 250px;
+  margin: 0.5em 1.5em;
+  border-radius: 15px;
+  background-color: var(--quadrary-color);
+}

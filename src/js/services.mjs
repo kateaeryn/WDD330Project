@@ -124,3 +124,18 @@ export async function getPersonImageBySearch(input) {
         .then(object => {return object})
         .catch(err => console.error(err));
 }
+
+export async function getPersonProfile(input) {
+    const selections = {
+        method: 'GET',
+        headers: {
+            accept: 'application/json',
+            Authorization: `Bearer ${token}`,
+        },
+    };
+    return await fetch(imageUrl + input, selections)
+        .then(response => response.json())
+        // .then(response => console.log(response))
+        .then(object => {return object})
+        .catch(err => console.error(err));
+}

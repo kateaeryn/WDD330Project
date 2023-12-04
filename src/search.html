@@ -1,31 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
     <script src="/js/search.js" type="module"></script>
     <title>Browse Movies</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <header class="header" id="main-header"></header>
-<div class="search">
-    <h2 class="searchInstructions">Search Movies</h2>
-    <p class="subinstructions">Search by keyword, movie title, </br>or first and last name to find your
-        next movie night!</p>
-    <form role="search" id="searchBar">
+    <div class="search">
+      <h2 class="searchInstructions">Search Movies</h2>
+      <p class="subinstructions">
+        Search by keyword, movie title, <br />
+        or first and last name to find your next movie night!
+      </p>
+      <form role="search" id="searchBar">
         <input type="text" id="MovieInput" placeholder="Movie Title" />
         <button type="submit" id="searchMovie">Search Now</button>
         <input type="text" id="PersonInput" placeholder="First and Last Name" />
         <button type="submit" id="searchPerson">Search Now</button>
-    </form>
-    <section class="searchResults">
-       
+      </form>
+      <section class="searchResults">
         <ul class="search-movie-grid"></ul>
-    </section>
-</body>
-<footer class="footer"></footer>
-
+      </section>
+    </div>
+  </body>
+  <footer class="footer"></footer>
 </html>
