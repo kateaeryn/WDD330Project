@@ -167,7 +167,7 @@ form input {
 .search{
   background-color: var(--primary-color);
   text-align: center;
-  
+  box-shadow: 0 0 2px 1.5px var(--primary-color);
 }
 
 .search-movie-grid li img{
@@ -183,6 +183,18 @@ padding-left: 0;
 }
 .search-movie-grid a{
   color: var(--font-color);
+}
+
+#searchMovie, #searchPerson{
+  height: 60px;
+    font-size: var(--med-font);
+    width: 250px;
+    margin: .5em 1.5em;
+    border-radius: 15px;
+    background-color: var(--quadrary-color);
+}
+.searchResults{
+  margin-top: 3em;
 }
 /* movie genre results*/
 .movie-list li img{

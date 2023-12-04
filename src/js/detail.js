@@ -1,5 +1,6 @@
 import { getMovieDetails, getCredits } from "./services.mjs";
 import { loadHeaderFooter } from "./utilities.mjs";
+import { searchInput, personInput } from "./search.mjs";
 
 loadHeaderFooter();
 
@@ -55,3 +56,4 @@ export function renderMovie(details, crew, cast) {
 }
 
 renderMovie(details, crew, cast);
+

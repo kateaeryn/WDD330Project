@@ -1,7 +1,8 @@
 import { getMovieBySearch } from "./services.mjs";
 import { getActorByName } from "./services.mjs";
 import { getMoviePosterBySearch } from "./services.mjs";
-import { getPersonImageBySearch } from "./services.mjs";
+
+
 
 export async function searchInput(input) {
     console.log(input);
@@ -9,9 +10,11 @@ export async function searchInput(input) {
     console.log(list);
     let array = list.results;
     
-    const grid = document.querySelector('.search-movie-grid');
-    
-        
+    const grid = document.createElement('ul');
+    grid.classList.add("search-movie-grid");
+    const div = document.querySelector(".searchResults");
+    div.append(grid);
+    localStorage.setItem("movieResults", input);    
    array.map(async (input) => {
         const movie_card = document.createElement('li');
         const link = document.createElement('a');
@@ -31,7 +34,8 @@ export async function searchInput(input) {
        link.append(image);
        link.append(title);
        movie_card.append(link);  
-        grid.append(movie_card);
+       grid.append(movie_card);
+       localStorage.setItem("movieResults", grid.innerHTML);
     });
     
 }
@@ -42,22 +46,21 @@ export async function personInput(input) {
     
     let array = list.results;
     console.log(array);
-    const grid = document.querySelector('.search-movie-grid');
+    const grid = document.createElement('ul');
+    grid.classList.add("search-movie-grid");
+    const div = document.querySelector(".searchResults");
+    div.append(grid);
     
-        
+    localStorage.setItem("peopleResults", input);    
    array.map(async (input) => {
         const movie_card = document.createElement('li');
         const link = document.createElement('a');
         const image = document.createElement('img');  
        const title = document.createElement('h3');
        
-    //     let profile = await getPersonImageBySearch(input.id);
-    //     console.log(profile); 
-    //    let posArray = profile;
-       
-    //    let imageUrl = posArray.file_path;
+    
        if (input.profile_path == null) {
-           image.src = "/images/western.png"
+           image.src = "/images/placeholder.png";
        } else {
            image.src = "https://image.tmdb.org/t/p/original/" + input.profile_path; 
        }
