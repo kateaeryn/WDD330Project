@@ -269,3 +269,11 @@ box-shadow: 0 0 1.5px 1.5px var(--primary-color);
   flex-wrap: wrap;
   line-height: 23px;
 }
+.wishlistBtn{
+  height: 60px;
+    font-size: var(--med-font);
+    width: 250px;
+    margin: .5em 1.5em;
+    border-radius: 15px;
+    background-color: var(--quadrary-color);
+  }

@@ -9,6 +9,7 @@ console.log(id);
 
 let details = await getMovieDetails(id);
 console.log(details);
+const button = document.querySelector(".wishlistBtn");
 
 function getMovieId() {
     const id = window.location.href.split("=").pop();
@@ -20,7 +21,6 @@ let cast = credits.cast;
 
 
 export function renderMovie(details, crew, cast) {
-    console.log(cast);
     const card = document.querySelector(".detailCard");
     const title = document.querySelector(".detailTitle");
     const poster = document.querySelector(".detailPoster");
@@ -29,6 +29,7 @@ export function renderMovie(details, crew, cast) {
     const crewList = document.querySelector(".crew");
     const castList = document.querySelector(".cast");
     const creditSection = document.querySelector(".credits");
+    
 
     title.innerHTML = details.title;
     poster.src = "https://image.tmdb.org/t/p/original" + details.poster_path;
@@ -48,12 +49,17 @@ export function renderMovie(details, crew, cast) {
         castList.append(castMem);
     })
     creditSection.append(crewList, castList);
-    
-    
-    
-    card.append(title, poster, tag, overview);
+        
+    card.append(title, poster, tag, overview, button);
     card.append(creditSection);
 }
 
 renderMovie(details, crew, cast);
 
+button.addEventListener("click", () => {
+    let list = [];
+    let movie = [details.id, details.title, details.poster_path];
+    list.push(movie);
+    list = list.concat(JSON.parse(localStorage.getItem("wishlist") || "[]"));
+    localStorage.setItem("wishlist", JSON.stringify(list));
+})
