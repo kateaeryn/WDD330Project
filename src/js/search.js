@@ -14,7 +14,6 @@ document.querySelector("#searchMovie").addEventListener("click", (e) => {
 document.querySelector("#searchPerson").addEventListener("click", (e) => {
   e.preventDefault();
   let input = document.getElementById("PersonInput").value;
-  console.log(input);
   const grid = document.querySelector(".search-movie-grid");
   grid.remove();
   personInput(input);

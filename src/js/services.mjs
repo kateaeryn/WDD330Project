@@ -135,7 +135,7 @@ export async function getPersonProfile(input) {
     };
     return await fetch(imageUrl + input, selections)
         .then(response => response.json())
-        // .then(response => console.log(response))
+        //  .then(response => console.log(response))
         .then(object => {return object})
         .catch(err => console.error(err));
 }

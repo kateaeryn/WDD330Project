@@ -3,32 +3,33 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    
+    
     <title>Home Page</title>
-    <script type="module" crossorigin src="/assets/home-ce47ef39.js"></script>
-    <link
-      rel="modulepreload"
-      crossorigin
-      href="/assets/utilities-d134cc5c.js"
-    />
-    <link rel="stylesheet" href="/assets/utilities-c5b4c210.css" />
+    <script type="module" crossorigin src="/assets/home-89829acb.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/utilities-493f7812.js">
+    <link rel="stylesheet" href="/assets/utilities-f3d6fa0f.css">
   </head>
   <body>
     <header class="header" id="main-header"></header>
-    <main>
+    <div class="index">
       <div class="searchBar">
-        <form role="search" id="searchBar">
-          <input
-            type="text"
-            id="filterInput"
-            placeholder="Search for Movies here . . . "
-          />
-        </form>
+        <h2 class="instructions">Search Movies</h2>
+        <a href="/search.html"
+          ><button type="submit" class="searchBtn">Search Now</button></a
+        >
       </div>
-      <div class="recommended">
-        <div class="movies"></div>
+
+      <div class="browseOption">
+        <h2 class="browseHeader">Browse Movies</h2>
+        <a href="/browse.html"
+          ><button class="browseBtn">
+            Browse <br />
+            Here
+          </button></a
+        >
       </div>
-    </main>
+    </div>
   </body>
   <footer class="footer"></footer>
 </html>

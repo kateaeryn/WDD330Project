@@ -65,7 +65,7 @@ export async function personInput(input) {
            image.src = "https://image.tmdb.org/t/p/original/" + input.profile_path; 
        }
         
-       link.href = "../personDetail.html/?person=";
+       link.href = "../anything.html?person=" + input.id;
         
         image.alt = input.original_name;
        title.innerText = input.original_name;
