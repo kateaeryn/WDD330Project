@@ -1,4 +1,3 @@
-
 :root {
   --font-body: "Legend";
   --font-headline: "Oxygen";
@@ -19,9 +18,8 @@
 
 body {
   background-color: var(--tertiary-color);
-  
 }
-main{
+main {
   background-color: var(--primary-color);
   max-width: 1080px;
   width: 100%;
@@ -32,32 +30,30 @@ main{
 .header {
   display: flex;
   margin-bottom: 2em;
-  padding: 2em 2em ;
+  padding: 2em 2em;
   background-color: var(--primary-color);
   color: var(--quadrary-color);
 }
 
 .navigation {
   display: flex;
- gap: 13px;
+  gap: 13px;
   flex-basis: 55%;
   max-width: 1080px;
   margin: auto;
   flex-wrap: wrap;
   justify-content: space-between;
-  
+
   align-items: flex-end;
-  
 }
 
-.navigation a{
+.navigation a {
   color: var(--font-color);
   text-decoration: none;
   font-size: var(--med-font);
- 
 }
 
-.alert{
+.alert {
   text-align: center;
   position: absolute;
   top: 50%;
@@ -66,13 +62,12 @@ main{
   max-width: 500px;
   border-radius: 15px;
   font-size: var(--large-font);
- display: flex;
+  display: flex;
   padding: 1.5em;
- background-color: var(--quadrary-color);
- border: 1px var(--secondary-color);
-
+  background-color: var(--quadrary-color);
+  border: 1px var(--secondary-color);
 }
-.alert span{
+.alert span {
   position: relative;
   align-content: flex-start;
   padding-left: 2em;
@@ -82,7 +77,6 @@ main{
 h1 {
   font-size: var(--xl-font);
   margin: 0;
-  
 }
 h2 {
   font-size: var(--large-font);
@@ -111,7 +105,7 @@ form#searchBar {
   max-width: 900px;
   margin: 2em auto 2em auto;
 }
-input#MovieInput{
+input#MovieInput {
   height: 60px;
   width: 85%;
   font-size: var(--large-font);
@@ -132,12 +126,12 @@ input#MovieInput{
   border-radius: 15px;
   background-color: var(--quadrary-color);
 }
-form#searchBarSmall{
+form#searchBarSmall {
   display: flex;
   padding: 1em;
   margin: auto;
   width: 100%;
- max-width: 1080px;
+  max-width: 1080px;
 }
 /* index page*/
 .index {
@@ -147,11 +141,10 @@ form#searchBarSmall{
   gap: -10px;
 }
 
-.searchBar h1{
+.searchBar h1 {
   color: var(--quadrary-color);
-
 }
-.searchBar p{
+.searchBar p {
   font-size: var(--large-font);
   color: var(--font-color);
 }
@@ -179,7 +172,6 @@ form#searchBarSmall{
   color: var(--font-color);
 }
 
-
 .searchResults {
   margin-top: 3em;
 }
@@ -188,7 +180,6 @@ form#searchBarSmall{
 .movie-list li img {
   width: 150px;
   height: 150px;
-
 }
 
 .movie-grid li img {
@@ -209,8 +200,7 @@ ul {
   align-items: baseline;
   justify-content: space-evenly;
   text-align: center;
-  margin: auto ;
- 
+  margin: auto;
 }
 .movie-list a {
   color: var(--font-color);
@@ -274,51 +264,50 @@ li h3 {
 }
 
 /*person details*/
-.personCard{
+.personCard {
   display: grid;
-    max-width: 1080px;
-    background-color: var(--primary-color);
-    margin: auto;
-    color: var(--quintary-color);
-    justify-items: center;
-    text-align: center;
-    box-shadow: 0 0 1.5px 1.5px var(--primary-color);
+  max-width: 1080px;
+  background-color: var(--primary-color);
+  margin: auto;
+  color: var(--quintary-color);
+  justify-items: center;
+  text-align: center;
+  box-shadow: 0 0 1.5px 1.5px var(--primary-color);
 }
-.personCard img{
+.personCard img {
   width: 400px;
 }
-.personCard h4{
-  margin: .25em;
+.personCard h4 {
+  margin: 0.25em;
 }
 
 /* watch list*/
-.watchList{
+.watchList {
   display: flex;
   flex-wrap: wrap;
   max-width: 1080px;
-    background-color: var(--primary-color);
-    margin: auto;
-    color: var(--quintary-color);
-      box-shadow: 0 0 1.5px 1.5px var(--primary-color);
-      padding: 3em;
-      gap: 20px;
+  background-color: var(--primary-color);
+  margin: auto;
+  color: var(--quintary-color);
+  box-shadow: 0 0 1.5px 1.5px var(--primary-color);
+  padding: 3em;
+  gap: 20px;
 }
-.card{
+.card {
   display: flex;
 }
-.watchList img{
+.watchList img {
   width: 200px;
   border-radius: 15px;
   grid-row-start: 1 span 2;
 }
-.watchList a{
- display: grid;
- grid-template-columns:auto 500px auto;
+.watchList a {
+  display: grid;
+  grid-template-columns: auto 500px auto;
   text-decoration: none;
   color: var(--font-color);
- 
 }
-.watchList button{
+.watchList button {
   padding: 1em;
   justify-self: end;
   align-self: end;
@@ -329,7 +318,7 @@ li h3 {
   font-size: var(--large-font);
   font-weight: bold;
 }
-.watchList h1{
- justify-self: start;
- padding-left: 1em;
+.watchList h1 {
+  justify-self: start;
+  padding-left: 1em;
 }
