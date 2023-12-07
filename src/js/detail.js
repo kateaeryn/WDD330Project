@@ -1,5 +1,5 @@
 import { getMovieDetails, getCredits } from "./services.mjs";
-import { loadHeaderFooter } from "./utilities.mjs";
+import { loadHeaderFooter, alertMessage } from "./utilities.mjs";
 
 loadHeaderFooter();
 
@@ -58,4 +58,5 @@ button.addEventListener("click", () => {
   list.push(movie);
   list = list.concat(JSON.parse(localStorage.getItem("wishlist") || "[]"));
   localStorage.setItem("wishlist", JSON.stringify(list));
+  alertMessage(`<strong>${details.title}<strong> <br> was added to your WatchList`);
 });

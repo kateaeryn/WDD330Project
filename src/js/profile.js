@@ -13,8 +13,9 @@ function getPersonId() {
   const id = window.location.href.split("=").pop();
   return id;
 }
+
 export function renderPerson(profile) {
-  const card = document.querySelector(".detailCard");
+  const card = document.querySelector(".personCard");
   const poster = document.querySelector(".detailImage");
   const tag = document.querySelector(".name");
   const birth = document.querySelector(".birthday");
