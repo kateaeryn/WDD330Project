@@ -1,15 +1,17 @@
-import { alertMessage, loadHeaderFooter } from "./utilities.mjs";
+import {  loadHeaderFooter, searchNow } from "./utilities.mjs";
 
 loadHeaderFooter();
-
+searchNow();
 
 function renderListItem(item) {
     const list = document.querySelector(".watchList");
+    
     const card = document.createElement("div");
     const link = document.createElement("a");
     const poster = document.createElement("img");
     const title = document.createElement("h1");
     const remove = document.createElement("button");
+    
     remove.classList.add("listBtn");
     remove.setAttribute("id","listBtn");
     remove.setAttribute("idNum",item[0]);
@@ -29,11 +31,18 @@ function renderListItem(item) {
 function renderList() {
     let list = localStorage.getItem("wishlist");
     let newList = JSON.parse(list);
+    if (newList.length == 0) {
+        const list = document.querySelector(".watchList");
+        const message = document.createElement("h1");
+        message.innerText = "Nothing to see here . . . so sad . . . Time to find your next great movie!";
+        list.append(message);
+    } else {
+        newList.forEach(item => {
+            renderListItem(item)
+        })
+    }
+};
 
-    newList.forEach(item => {
-        renderListItem(item)
-    });
-}
 renderList();
 let buttons = document.querySelectorAll(".listBtn");
 

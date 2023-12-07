@@ -80,3 +80,12 @@ export function alertMessage(message, scroll = true, duration = 3000) {
     main.removeChild(alert);
   }, duration);
 }
+
+export function searchNow() {
+    document.querySelector("#searchMovie").addEventListener("click", (e) => {
+        e.preventDefault();
+        window.location.href = "../search.html";
+        let input = document.getElementById("MovieInput").value;
+        sessionStorage.setItem("searchResults", input);
+    })
+};

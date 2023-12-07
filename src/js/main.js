@@ -1,3 +1,8 @@
-import { loadHeaderFooter } from "./utilities.mjs";
+import { loadHeaderFooter, searchNow } from "./utilities.mjs";
+
 
 loadHeaderFooter();
+
+searchNow();
+
+  

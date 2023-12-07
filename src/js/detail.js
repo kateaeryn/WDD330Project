@@ -1,7 +1,8 @@
 import { getMovieDetails, getCredits } from "./services.mjs";
-import { loadHeaderFooter, alertMessage } from "./utilities.mjs";
+import { loadHeaderFooter, alertMessage, searchNow } from "./utilities.mjs";
 
 loadHeaderFooter();
+searchNow();
 
 const id = getMovieId("movie");
 console.log(id);

@@ -39,8 +39,8 @@ main{
 
 .navigation {
   display: flex;
- 
-  flex-basis: 50%;
+ gap: 13px;
+  flex-basis: 55%;
   max-width: 1080px;
   margin: auto;
   flex-wrap: wrap;
@@ -95,25 +95,6 @@ h4 {
   font-size: var(--med-font);
 }
 /* form formatting*/
-form fieldset {
-  margin: auto;
-  border: 1px solid #000;
-  border-radius: 10px;
-  padding: 0.5rem 2%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  max-width: 500px;
-}
-form legend {
-  color: #000;
-  margin: 0 1rem;
-  padding: 0 0.5rem;
-  font-size: var(--large-font);
-}
-form label {
-  font-size: var(--large-font);
-}
 .searchBar {
   background-color: var(--primary-color);
   max-width: 1080px;
@@ -125,26 +106,39 @@ form label {
   border: solid 3px var(--tertiary-color);
 }
 form#searchBar {
+  display: flex;
+  align-items: flex-end;
   max-width: 900px;
-  margin: auto;
+  margin: 2em auto 2em auto;
 }
 input#MovieInput{
   height: 60px;
   width: 85%;
   font-size: var(--large-font);
   padding-left: 0.5em;
-}
-form input {
   border: solid 1px black;
-  margin: 1em 0;
-  padding: 0 15px;
-  font-size: 16px;
+  margin-right: 2em;
   font-weight: bold;
-  color: #333;
-  border-radius: 8px;
+  border-radius: 15px;
   background: #fff;
 }
 
+#searchMovie {
+  height: 60px;
+  font-size: var(--med-font);
+  font-weight: bold;
+  width: 250px;
+  margin: auto;
+  border-radius: 15px;
+  background-color: var(--quadrary-color);
+}
+form#searchBarSmall{
+  display: flex;
+  padding: 1em;
+  margin: auto;
+  width: 100%;
+ max-width: 1080px;
+}
 /* index page*/
 .index {
   display: flex;
@@ -153,15 +147,14 @@ form input {
   gap: -10px;
 }
 
-.searchBtn {
-  height: 150px;
-  font-size: var(--xl-font);
-  width: 400px;
-  margin: 1.5em 1em;
-  border-radius: 15px;
-  background-color: var(--quadrary-color);
-}
+.searchBar h1{
+  color: var(--quadrary-color);
 
+}
+.searchBar p{
+  font-size: var(--large-font);
+  color: var(--font-color);
+}
 /*search page*/
 .search {
   background-color: var(--primary-color);
@@ -171,26 +164,22 @@ form input {
 
 .search-movie-grid li img {
   width: 300px;
+  border-radius: 15px;
 }
 .search-movie-grid {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   justify-content: space-evenly;
+  align-items: baseline;
   padding-left: 0;
+  padding-top: 2em;
 }
 .search-movie-grid a {
   color: var(--font-color);
 }
 
-#searchMovie{
-  height: 60px;
-  font-size: var(--med-font);
-  width: 250px;
-  margin: 0.5em 1.5em;
-  border-radius: 15px;
-  background-color: var(--quadrary-color);
-}
+
 .searchResults {
   margin-top: 3em;
 }
@@ -224,7 +213,7 @@ ul {
  
 }
 .movie-list a {
-  color: var(--tertiary-color);
+  color: var(--font-color);
   margin: 0;
 }
 .movie-grid {
@@ -243,9 +232,11 @@ ul {
   text-align: center;
   box-shadow: 0 0 1.5px 1.5px var(--primary-color);
   border: solid 3px var(--tertiary-color);
+  color: var(--quadrary-color);
 }
 .movieGenres a {
-  color: var(--quintary-color);
+  color: var(--font-color);
+  text-decoration: none;
 }
 
 /* movie detail cards*/
@@ -335,7 +326,8 @@ li h3 {
   height: auto;
   border-radius: 15px;
   background-color: var(--quadrary-color);
-  font-size: var(--med-font);
+  font-size: var(--large-font);
+  font-weight: bold;
 }
 .watchList h1{
  justify-self: start;

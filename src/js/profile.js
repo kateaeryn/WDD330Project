@@ -1,7 +1,8 @@
 import { getActorByName, getPersonProfile } from "./services.mjs";
-import { loadHeaderFooter } from "./utilities.mjs";
+import { loadHeaderFooter, searchNow } from "./utilities.mjs";
 
 loadHeaderFooter();
+searchNow();
 
 const id = getPersonId("person");
 console.log(id);

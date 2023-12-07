@@ -16,26 +16,48 @@ export async function searchInput(input) {
     div.append(grid);
     localStorage.setItem("movieResults", input);    
    array.map(async (input) => {
-        const movie_card = document.createElement('li');
+       if (input.media_type == "movie") {
+           const movie_card = document.createElement('li');
+        const link = document.createElement('a');
+        const image = document.createElement('img');  
+       const title = document.createElement('h3');
+           let posters = await getMoviePosterBySearch(input.id);
+           let posArray = posters.posters[0];
+       
+           let imageUrl = posArray.file_path;
+           console.log(imageUrl);
+        
+           link.href = "../movieDetail.html?movie=" + input.id;
+           image.src = "https://image.tmdb.org/t/p/original" + imageUrl;
+           image.alt = input.title;
+           title.innerText = input.title;
+           link.append(image);
+           link.append(title);
+           movie_card.append(link);
+           grid.append(movie_card);
+           localStorage.setItem("movieResults", grid.innerHTML);
+       } else {
+           const movie_card = document.createElement('li');
         const link = document.createElement('a');
         const image = document.createElement('img');  
        const title = document.createElement('h3');
        
-        let posters = await getMoviePosterBySearch(input.id);
-        let posArray = posters.posters[0];
-       
-       let imageUrl = posArray.file_path;
-        console.log(imageUrl); 
+    
+       if (input.profile_path == null) {
+           image.src = "/images/placeholder.png";
+       } else {
+           image.src = "https://image.tmdb.org/t/p/original/" + input.profile_path; 
+       }
         
-       link.href = "../movieDetail.html?movie=" + input.id;
-        image.src = "https://image.tmdb.org/t/p/original" + imageUrl; 
-        image.alt = input.title;
-       title.innerText = input.title;
+       link.href = "../anything.html?person=" + input.id;
+        
+        image.alt = input.original_name;
+       title.innerText = input.original_name;
        link.append(image);
        link.append(title);
        movie_card.append(link);  
-       grid.append(movie_card);
-       localStorage.setItem("movieResults", grid.innerHTML);
+        grid.append(movie_card);
+       }
     });
     
 }

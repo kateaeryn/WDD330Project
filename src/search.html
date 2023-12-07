@@ -5,28 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
     <script src="/js/search.js" type="module"></script>
-    <title>Browse Movies</title>
+    <title>Search Results</title>
   </head>
 
   <body>
     <header class="header" id="main-header"></header>
-    <main>
-    <div class="search">
-      <h2 class="searchInstructions">Search Movies</h2>
-      <p class="subinstructions">
-        Search by keyword, movie title, <br />
-        or first and last name to find your next movie night!
-      </p>
-      <form role="search" id="searchBar">
-        <input type="text" id="MovieInput" placeholder="Movie Title" />
+    <form role="search" id="searchBarSmall">
+        <input type="text" id="MovieInput" placeholder="Title, Name or Keyword" />
         <button type="submit" id="searchMovie">Search Now</button>
-        <input type="text" id="PersonInput" placeholder="First and Last Name" />
-        <button type="submit" id="searchPerson">Search Now</button>
+        
       </form>
+    <main>     
       <section class="searchResults">
-        <ul class="search-movie-grid"></ul>
+        
       </section>
-    </div>
+    
     </main>
   </body>
   <footer class="footer"></footer>

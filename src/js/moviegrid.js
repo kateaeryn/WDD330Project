@@ -1,7 +1,8 @@
-import { loadHeaderFooter, getParam } from "./utilities.mjs";
+import { loadHeaderFooter, getParam, searchNow } from "./utilities.mjs";
 import genreList from "./moviegrid.mjs";
 
 loadHeaderFooter();
+searchNow();
 
 const genres = getParam("genre");
 
