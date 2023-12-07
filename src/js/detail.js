@@ -28,13 +28,20 @@ export function renderMovie(details, crew, cast) {
   const crewList = document.querySelector(".crew");
   const castList = document.querySelector(".cast");
   const creditSection = document.querySelector(".credits");
+  const date = document.querySelector(".date");
+  const genre = document.querySelector(".genre");
+  const runtime = document.querySelector(".runtime");
+  const info = document.querySelector(".info");
 
   title.innerHTML = details.title;
   poster.src = "https://image.tmdb.org/t/p/original" + details.poster_path;
   poster.alt = details.title;
   tag.innerText = `"${details.tagline}"`;
   overview.innerHTML = details.overview;
-
+  date.innerHTML = new Date(details.release_date).toLocaleDateString("en-US");
+  genre.innerHTML = details.genres[0].name;
+  runtime.innerHTML = details.runtime + " minutes";
+  
   crew.forEach((member) => {
     const crewMem = document.createElement("li");
     crewMem.innerHTML = member.job + " : " + member.name;
@@ -46,9 +53,9 @@ export function renderMovie(details, crew, cast) {
     castList.append(castMem);
   });
   creditSection.append(crewList, castList);
-
-  card.append(title, poster, tag, overview, button);
-  card.append(creditSection);
+  info.append(title, tag, date, genre, runtime, overview, button);
+  card.append(poster,info, creditSection);
+  
 }
 
 renderMovie(details, crew, cast);

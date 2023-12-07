@@ -5,6 +5,7 @@ const posterUrl = 'https://api.themoviedb.org/3/movie/';
 const searchUrl = 'https://api.themoviedb.org/3/search/multi?query=';
 const personUrl = 'https://api.themoviedb.org/3/search/person?query=';
 const imageUrl = 'https://api.themoviedb.org/3/person/';
+const trend = 'https://api.themoviedb.org/3/trending/movie/day?include_adult=false&language=en-US';
 
 export async function getMoviesByGenre(genre) {
     const selections = {
@@ -110,20 +111,6 @@ export async function getActorByName(input) {
         .then(object => {return object})
         .catch(err => console.error(err));
 }
-export async function getPersonImageBySearch(input) {
-    const selections = {
-        method: 'GET',
-        headers: {
-            accept: 'application/json',
-            Authorization: `Bearer ${token}`,
-        },
-    };
-    return await fetch(imageUrl + input +"/images", selections)
-        .then(response => response.json())
-        // .then(response => console.log(response))
-        .then(object => {return object})
-        .catch(err => console.error(err));
-}
 
 export async function getPersonProfile(input) {
     const selections = {
@@ -138,4 +125,18 @@ export async function getPersonProfile(input) {
         //  .then(response => console.log(response))
         .then(object => {return object})
         .catch(err => console.error(err));
+}
+export async function getTrending() {
+    const selections = {
+        method: 'GET',
+        headers: {
+            Authorization: `Bearer ${token}`,
+            accept: 'application/json',
+        },
+    };
+    
+    return await fetch(trend, selections)
+        .then(res => res.json())
+        .then(object => {return object})
+        .catch(err => console.error('error:' + err));
 }

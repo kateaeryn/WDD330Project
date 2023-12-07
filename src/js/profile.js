@@ -1,4 +1,4 @@
-import { getActorByName, getPersonProfile } from "./services.mjs";
+import { getPersonProfile } from "./services.mjs";
 import { loadHeaderFooter, searchNow } from "./utilities.mjs";
 
 loadHeaderFooter();
@@ -22,15 +22,17 @@ export function renderPerson(profile) {
   const birth = document.querySelector(".birthday");
   const place = document.querySelector(".birthplace");
   const bio = document.querySelector(".bio");
+  const info = document.querySelector(".personInfo");
 
   poster.src = "https://image.tmdb.org/t/p/original" + profile.profile_path;
   poster.alt = profile.name;
   tag.innerText = profile.name;
-  birth.innerText = profile.birthday;
+  birth.innerText = new Date(profile.birthday).toLocaleDateString("en-US");
   place.innerText = profile.place_of_birth;
   bio.innerText = profile.biography;
-
-  card.append(poster, tag, birth, place, bio);
+  
+  info.append(tag, birth, place, bio);
+  card.append(poster, info);
 }
 
 renderPerson(profile);

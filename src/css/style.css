@@ -29,28 +29,29 @@ main {
 
 .header {
   display: flex;
-  margin-bottom: 2em;
-  padding: 2em 2em;
+  margin-bottom: 1em;
   background-color: var(--primary-color);
   color: var(--quadrary-color);
 }
 
 .navigation {
   display: flex;
-  gap: 13px;
-  flex-basis: 55%;
+  flex-basis: 100%;
   max-width: 1080px;
   margin: auto;
   flex-wrap: wrap;
   justify-content: space-between;
-
-  align-items: flex-end;
+  align-items: baseline;
 }
 
 .navigation a {
   color: var(--font-color);
   text-decoration: none;
   font-size: var(--med-font);
+}
+.navigation h1{
+  color: var(--quadrary-color);
+  
 }
 
 .alert {
@@ -94,19 +95,22 @@ h4 {
   max-width: 1080px;
   width: 100%;
   text-align: center;
-  padding-top: 2em;
+  padding-top: 1em;
   padding-bottom: 1em;
   box-shadow: 0 0 2px 1.5px var(--primary-color);
   border: solid 3px var(--tertiary-color);
+}
+.searchBar h1{
+  padding: 0;
 }
 form#searchBar {
   display: flex;
   align-items: flex-end;
   max-width: 900px;
-  margin: 2em auto 2em auto;
+  margin: 1em auto 1em auto;
 }
 input#MovieInput {
-  height: 60px;
+  height: 50px;
   width: 85%;
   font-size: var(--large-font);
   padding-left: 0.5em;
@@ -118,7 +122,7 @@ input#MovieInput {
 }
 
 #searchMovie {
-  height: 60px;
+  height: 50px;
   font-size: var(--med-font);
   font-weight: bold;
   width: 250px;
@@ -148,6 +152,30 @@ form#searchBarSmall {
   font-size: var(--large-font);
   color: var(--font-color);
 }
+
+.trending img{
+  width: 250px;
+  border-radius: 15px;
+  padding: 10px;
+}
+.recommended{
+  text-align: center;
+  color: var(--quadrary-color);
+  margin: .2em;
+}
+.trending {
+ white-space: nowrap;
+ padding-bottom: 2em;
+ overflow-x: scroll;
+ overflow-y: hidden;
+ background-color:var(--quadrary-color);
+ max-height: 400px;
+ height: 100%;
+ width: 100%;
+ scrollbar-width: auto;
+}
+
+
 /*search page*/
 .search {
   background-color: var(--primary-color);
@@ -218,7 +246,7 @@ ul {
   background-color: var(--primary-color);
   max-width: 1080px;
   margin: auto;
-  padding: 30px 0 70px 0;
+  padding: 30px 0 60px 0;
   text-align: center;
   box-shadow: 0 0 1.5px 1.5px var(--primary-color);
   border: solid 3px var(--tertiary-color);
@@ -236,49 +264,70 @@ li h3 {
   margin: auto;
 }
 .detailCard {
-  display: grid;
+  display: flex;
+  flex-wrap: wrap;
   max-width: 1080px;
   background-color: var(--primary-color);
   margin: auto;
   color: var(--quintary-color);
   justify-items: center;
-  text-align: center;
+  text-align: left;
   box-shadow: 0 0 1.5px 1.5px var(--primary-color);
+  color: var(--font-color);
 }
 .detailPoster {
   width: 400px;
+  max-height: 600px;
   border-radius: 15px;
+  margin: 1em;
 }
+
+.info{
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  width: 100%;
+  margin-top: 1em;
+  margin-left: 1em;
+}
+
 .credits {
   display: flex;
   flex-wrap: wrap;
   line-height: 23px;
+  width: 1080px;
+  color: var(--font-color);
 }
 .wishlistBtn {
   height: 60px;
   font-size: var(--med-font);
   width: 250px;
-  margin: 0.5em 1.5em;
+  margin-top: 3em ;
   border-radius: 15px;
   background-color: var(--quadrary-color);
 }
 
 /*person details*/
 .personCard {
-  display: grid;
+  display: flex;
   max-width: 1080px;
   background-color: var(--primary-color);
   margin: auto;
-  color: var(--quintary-color);
-  justify-items: center;
-  text-align: center;
+  color: var(--font-color);
+  text-align: left;
   box-shadow: 0 0 1.5px 1.5px var(--primary-color);
 }
 .personCard img {
   width: 400px;
+  max-height: 600px;
+  border-radius: 15px;
+  margin: 1em;
 }
 .personCard h4 {
-  margin: 0.25em;
+  margin: 0.5em;
+}
+.personCard h1{
+  margin-top: .65em;
 }
 
 /* watch list*/
