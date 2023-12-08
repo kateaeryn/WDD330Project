@@ -10,7 +10,9 @@ genreList(genres);
 
 function getGenreId() {
   const id = window.location.href.split("=").pop();
-  return id;
+  const newid = id.replace("20", "");
+  const newNewid = newid.replace("%", " ");
+  return newNewid;
 }
 
 const pageGenre = getGenreId();

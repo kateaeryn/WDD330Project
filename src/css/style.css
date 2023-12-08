@@ -6,6 +6,7 @@
   --secondary-color: #96222a;
   --tertiary-color: #09090b;
   --quadrary-color: #eca72c;
+  --darker-quad: #a87010;
 
   --font-base: 18px;
   --small-font: 1em;
@@ -20,7 +21,7 @@ body {
   background-color: var(--tertiary-color);
 }
 main {
-  background-color: var(--primary-color);
+  
   max-width: 1080px;
   width: 100%;
   margin: auto;
@@ -49,9 +50,8 @@ main {
   text-decoration: none;
   font-size: var(--med-font);
 }
-.navigation h1{
+.navigation h1 {
   color: var(--quadrary-color);
-  
 }
 
 .alert {
@@ -64,14 +64,15 @@ main {
   border-radius: 15px;
   font-size: var(--large-font);
   display: flex;
-  padding: 1.5em;
+  justify-content: center;
+  padding: 0.5em;
   background-color: var(--quadrary-color);
-  border: 1px var(--secondary-color);
+  border: 3px var(--tertiary-color);
 }
 .alert span {
   position: relative;
   align-content: flex-start;
-  padding-left: 2em;
+  padding-left: 1em;
 }
 /*main body formatting*/
 
@@ -100,7 +101,7 @@ h4 {
   box-shadow: 0 0 2px 1.5px var(--primary-color);
   border: solid 3px var(--tertiary-color);
 }
-.searchBar h1{
+.searchBar h1 {
   padding: 0;
 }
 form#searchBar {
@@ -153,28 +154,36 @@ form#searchBarSmall {
   color: var(--font-color);
 }
 
-.trending img{
+.trending img {
   width: 250px;
   border-radius: 15px;
   padding: 10px;
 }
-.recommended{
+.recommended {
   text-align: center;
   color: var(--quadrary-color);
-  margin: .2em;
+  margin: 0.2em;
 }
 .trending {
- white-space: nowrap;
- padding-bottom: 2em;
- overflow-x: scroll;
- overflow-y: hidden;
- background-color:var(--quadrary-color);
- max-height: 400px;
- height: 100%;
- width: 100%;
- scrollbar-width: auto;
+  white-space: nowrap;
+  padding-bottom: 2em;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  background-color: var(--quadrary-color);
+  max-height: 400px;
+  height: 100%;
+  width: 100%;
+  scrollbar-width: thin;
+  scrollbar-color: dark;
 }
-
+::-webkit-scrollbar {
+  background: var(--quadrary-color);
+  height: 12px;
+  width: 12px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--darker-quad);
+}
 
 /*search page*/
 .search {
@@ -208,14 +217,18 @@ form#searchBarSmall {
 .movie-list li img {
   width: 150px;
   height: 150px;
+  margin-bottom: -25px;
 }
 
 .movie-grid li img {
   width: 200px;
   height: 300px;
   border-radius: 15px;
+  box-shadow: 0 0 3px 3px var(--primary-color);
 }
-
+.movie-grid img:hover{
+border: solid 7px var(--quadrary-color);
+}
 ul {
   list-style-type: none;
 }
@@ -232,8 +245,8 @@ ul {
 }
 .movie-list a {
   color: var(--font-color);
-  margin: 0;
 }
+
 .movie-grid {
   display: flex;
   flex-wrap: wrap;
@@ -243,18 +256,20 @@ ul {
   margin: auto;
 }
 .movieGenres {
-  background-color: var(--primary-color);
+  
   max-width: 1080px;
   margin: auto;
   padding: 30px 0 60px 0;
   text-align: center;
-  box-shadow: 0 0 1.5px 1.5px var(--primary-color);
-  border: solid 3px var(--tertiary-color);
+  
   color: var(--quadrary-color);
 }
 .movieGenres a {
   color: var(--font-color);
   text-decoration: none;
+}
+.genrePage {
+  color: var(--font-color);
 }
 
 /* movie detail cards*/
@@ -269,11 +284,10 @@ li h3 {
   max-width: 1080px;
   background-color: var(--primary-color);
   margin: auto;
-  color: var(--quintary-color);
   justify-items: center;
   text-align: left;
-  box-shadow: 0 0 1.5px 1.5px var(--primary-color);
   color: var(--font-color);
+  border-radius: 15px;
 }
 .detailPoster {
   width: 400px;
@@ -282,7 +296,7 @@ li h3 {
   margin: 1em;
 }
 
-.info{
+.info {
   display: flex;
   flex-direction: column;
   max-width: 600px;
@@ -302,7 +316,7 @@ li h3 {
   height: 60px;
   font-size: var(--med-font);
   width: 250px;
-  margin-top: 3em ;
+  margin-top: 3em;
   border-radius: 15px;
   background-color: var(--quadrary-color);
 }
@@ -312,10 +326,11 @@ li h3 {
   display: flex;
   max-width: 1080px;
   background-color: var(--primary-color);
-  margin: auto;
+  border-radius: 15px;
   color: var(--font-color);
   text-align: left;
-  box-shadow: 0 0 1.5px 1.5px var(--primary-color);
+  margin: auto;
+ 
 }
 .personCard img {
   width: 400px;
@@ -326,8 +341,8 @@ li h3 {
 .personCard h4 {
   margin: 0.5em;
 }
-.personCard h1{
-  margin-top: .65em;
+.personCard h1 {
+  margin-top: 0.65em;
 }
 
 /* watch list*/
@@ -335,39 +350,44 @@ li h3 {
   display: flex;
   flex-wrap: wrap;
   max-width: 1080px;
-  background-color: var(--primary-color);
+  background-color: var(--tertiary-color);
   margin: auto;
   color: var(--quintary-color);
-  box-shadow: 0 0 1.5px 1.5px var(--primary-color);
-  padding: 3em;
   gap: 20px;
 }
 .card {
   display: flex;
+  margin: 1em;
+  padding: 1em;
+  background-color: var(--primary-color);
+  width: 100%;
+  border-radius: 15px;
 }
 .watchList img {
-  width: 200px;
+  width: 125px;
   border-radius: 15px;
   grid-row-start: 1 span 2;
 }
 .watchList a {
-  display: grid;
-  grid-template-columns: auto 500px auto;
   text-decoration: none;
   color: var(--font-color);
 }
-.watchList button {
-  padding: 1em;
-  justify-self: end;
-  align-self: end;
-  width: auto;
-  height: auto;
+section {
+  display: flex;
+  flex-direction: column;
+  gap: 5%;
+  padding-left: 2em;
+  color: var(--font-color);
+}
+section p {
+  padding: 0;
+  margin: 0;
+}
+.listBtn {
+  width: 250px;
+  height: 35px;
   border-radius: 15px;
   background-color: var(--quadrary-color);
-  font-size: var(--large-font);
+  font-size: var(--small-font);
   font-weight: bold;
-}
-.watchList h1 {
-  justify-self: start;
-  padding-left: 1em;
 }

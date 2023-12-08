@@ -6,4 +6,3 @@ searchNow();
 
 let input = sessionStorage.getItem("searchResults");
 searchInput(input);
-

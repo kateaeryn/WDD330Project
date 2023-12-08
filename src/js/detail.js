@@ -41,7 +41,7 @@ export function renderMovie(details, crew, cast) {
   date.innerHTML = new Date(details.release_date).toLocaleDateString("en-US");
   genre.innerHTML = details.genres[0].name;
   runtime.innerHTML = details.runtime + " minutes";
-  
+
   crew.forEach((member) => {
     const crewMem = document.createElement("li");
     crewMem.innerHTML = member.job + " : " + member.name;
@@ -54,15 +54,20 @@ export function renderMovie(details, crew, cast) {
   });
   creditSection.append(crewList, castList);
   info.append(title, tag, date, genre, runtime, overview, button);
-  card.append(poster,info, creditSection);
-  
+  card.append(poster, info, creditSection);
 }
 
 renderMovie(details, crew, cast);
 
 button.addEventListener("click", () => {
   let list = [];
-  let movie = [details.id, details.title, details.poster_path];
+  let movie = [
+    details.id,
+    details.title,
+    details.poster_path,
+    details.runtime,
+    details.release_date,
+  ];
   list.push(movie);
   list = list.concat(JSON.parse(localStorage.getItem("wishlist") || "[]"));
   localStorage.setItem("wishlist", JSON.stringify(list));

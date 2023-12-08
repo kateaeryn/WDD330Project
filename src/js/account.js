@@ -11,7 +11,10 @@ function renderListItem(item) {
   const link = document.createElement("a");
   const poster = document.createElement("img");
   const title = document.createElement("h1");
+  const date = document.createElement("p");
+  const time = document.createElement("p");
   const remove = document.createElement("button");
+  const section = document.createElement("section");
 
   remove.classList.add("listBtn");
   remove.setAttribute("id", "listBtn");
@@ -24,8 +27,11 @@ function renderListItem(item) {
   poster.alt = item[1];
   title.innerText = item[1];
   remove.innerHTML = "Remove From Watch List";
-  link.append(poster, title);
-  card.append(link, remove);
+  date.innerHTML = new Date(item[4]).toLocaleDateString("en-us");
+  time.innerHTML = item[3] + " minutes";
+  link.append(poster);
+  section.append(title, date, time, remove);
+  card.append(link, section);
   list.append(card);
 }
 function renderList() {
@@ -53,7 +59,7 @@ buttons.forEach((button) => {
     if (event.target.classList.contains("listBtn")) {
       const movie = event.currentTarget.getAttribute("idNum");
       // const card = document.querySelector(".card");
-      
+
       let list = localStorage.getItem("wishlist");
       let newList = JSON.parse(list);
       newList.forEach((item) => {
@@ -69,28 +75,25 @@ buttons.forEach((button) => {
 });
 
 async function renderTrending() {
-   let list = await getTrending(); 
-    
-    let options = list.results;
-    console.log(options);
-    const trending = document.querySelector(".trending");
-    
+  let list = await getTrending();
 
-    options.map(async (item) => {
-        const img = document.createElement("img");
-        const link = document.createElement("a");
+  let options = list.results;
+  const trending = document.querySelector(".trending");
 
-        let poster = await getMoviePoster(item.id);
-        let array = poster.posters[0];
-        let url = array.file_path;
+  options.map(async (item) => {
+    const img = document.createElement("img");
+    const link = document.createElement("a");
 
-        link.href = "../movieDetail.html?movie=" + item.id;
-        img.src = "https://image.tmdb.org/t/p/original" + url;
-        img.alt = item.title;
-        link.append(img);
-        trending.append(link);
-    }
-        )
+    let poster = await getMoviePoster(item.id);
+    let array = poster.posters[0];
+    let url = array.file_path;
+
+    link.href = "../movieDetail.html?movie=" + item.id;
+    img.src = "https://image.tmdb.org/t/p/original" + url;
+    img.alt = item.title;
+    link.append(img);
+    trending.append(link);
+  });
 }
 
 renderTrending();

@@ -30,7 +30,7 @@ export function renderPerson(profile) {
   birth.innerText = new Date(profile.birthday).toLocaleDateString("en-US");
   place.innerText = profile.place_of_birth;
   bio.innerText = profile.biography;
-  
+
   info.append(tag, birth, place, bio);
   card.append(poster, info);
 }
