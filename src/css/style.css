@@ -2,8 +2,7 @@
   --font-body: "Legend";
   --font-headline: "Oxygen";
   --font-color: #ebebeb;
-  --primary-color: #4f3073;
-  --secondary-color: #96222a;
+  --primary-color: #741a20;
   --tertiary-color: #09090b;
   --quadrary-color: #eca72c;
   --darker-quad: #a87010;
@@ -219,7 +218,14 @@ form#searchBarSmall {
   height: 150px;
   margin-bottom: -25px;
 }
-
+.movie-list li{
+  background-color: var(--primary-color);
+  border-radius: 15px;
+  padding: .5em 0;
+}
+.movie-list li:hover{
+  border: solid 7px var(--quadrary-color);
+}
 .movie-grid li img {
   width: 200px;
   height: 300px;
