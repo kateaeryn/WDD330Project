@@ -63,7 +63,7 @@ export function getParam(param) {
   return urlParams.get(param);
 }
 
-export function alertMessage(message, scroll = true, duration = 3000) {
+export function alertMessage(message, scroll = true, duration = 30000) {
   const alert = document.createElement("div");
   alert.classList.add("alert");
   alert.innerHTML = `<p>${message}</p><span>X</span>`;

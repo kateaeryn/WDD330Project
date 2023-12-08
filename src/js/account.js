@@ -17,8 +17,8 @@ function renderListItem(item) {
   const section = document.createElement("section");
 
   remove.classList.add("listBtn");
-  remove.setAttribute("id", "listBtn");
-  remove.setAttribute("idNum", item[0]);
+  // remove.setAttribute("id", "listBtn");
+  remove.setAttribute("id", item[0]);
   card.classList.add("card");
   card.setAttribute("id", item[0]);
 
@@ -27,7 +27,7 @@ function renderListItem(item) {
   poster.alt = item[1];
   title.innerText = item[1];
   remove.innerHTML = "Remove From Watch List";
-  date.innerHTML = new Date(item[4]).toLocaleDateString("en-us");
+  date.innerHTML = new Date(item[4]).getFullYear();
   time.innerHTML = item[3] + " minutes";
   link.append(poster);
   section.append(title, date, time, remove);
@@ -41,7 +41,7 @@ function renderList() {
     const watchlist = document.querySelector(".watchList");
     const message = document.createElement("h1");
     message.innerText =
-      "Nothing to see here . . . so sad . . . Time to find your next great movie!";
+      "There's nothing here . . . so sad . . . Time to find your next great movie!";
     watchlist.append(message);
   } else {
     newList.forEach((item) => {
@@ -57,8 +57,7 @@ buttons.forEach((button) => {
   button.addEventListener("click", (event) => {
     event.preventDefault();
     if (event.target.classList.contains("listBtn")) {
-      const movie = event.currentTarget.getAttribute("idNum");
-      // const card = document.querySelector(".card");
+      const movie = event.currentTarget.getAttribute("id");
 
       let list = localStorage.getItem("wishlist");
       let newList = JSON.parse(list);

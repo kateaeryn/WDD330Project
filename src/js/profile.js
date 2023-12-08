@@ -5,17 +5,16 @@ loadHeaderFooter();
 searchNow();
 
 const id = getPersonId("person");
-console.log(id);
 
 let profile = await getPersonProfile(id);
-console.log(profile);
 
 function getPersonId() {
-  const id = window.location.href.split("=").pop();
-  return id;
+  const ident = window.location.href.split("=").pop();
+  return ident;
 }
 
-export function renderPerson(profile) {
+export async function renderPerson(person) {
+  console.log(person);
   const card = document.querySelector(".personCard");
   const poster = document.querySelector(".detailImage");
   const tag = document.querySelector(".name");
@@ -24,12 +23,12 @@ export function renderPerson(profile) {
   const bio = document.querySelector(".bio");
   const info = document.querySelector(".personInfo");
 
-  poster.src = "https://image.tmdb.org/t/p/original" + profile.profile_path;
-  poster.alt = profile.name;
-  tag.innerText = profile.name;
-  birth.innerText = new Date(profile.birthday).toLocaleDateString("en-US");
-  place.innerText = profile.place_of_birth;
-  bio.innerText = profile.biography;
+  poster.src = "https://image.tmdb.org/t/p/original" + person.profile_path;
+  poster.alt = person.name;
+  tag.innerText = person.name;
+  birth.innerText = new Date(person.birthday).toLocaleDateString("en-US");
+  place.innerText = person.place_of_birth;
+  bio.innerText = person.biography;
 
   info.append(tag, birth, place, bio);
   card.append(poster, info);
