@@ -57,6 +57,7 @@ main {
 }
 footer {
   color: var(--quadrary-color);
+  margin-left: 1em;
 }
 .alert {
   text-align: center;
