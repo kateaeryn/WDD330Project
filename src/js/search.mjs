@@ -14,7 +14,7 @@ export async function searchInput(input) {
     div.append(grid);
     localStorage.setItem("movieResults", input);    
    array.map(async (input) => {
-       if (input.media_type == "movie") {
+       if (input.media_type == "movie" || "tv") {
            const movie_card = document.createElement('li');
         const link = document.createElement('a');
         const image = document.createElement('img');  
@@ -60,39 +60,39 @@ export async function searchInput(input) {
     
 }
 
-export async function personInput(input) {
-    console.log(input);
-    let list =  await getActorByName(input);
+// export async function personInput(input) {
+//     console.log(input);
+//     let list =  await getActorByName(input);
     
-    let array = list.results;
-    console.log(array);
-    const grid = document.createElement('ul');
-    grid.classList.add("search-movie-grid");
-    const div = document.querySelector(".searchResults");
-    div.append(grid);
+//     let array = list.results;
+//     console.log(array);
+//     const grid = document.createElement('ul');
+//     grid.classList.add("search-movie-grid");
+//     const div = document.querySelector(".searchResults");
+//     div.append(grid);
     
-    localStorage.setItem("peopleResults", input);    
-   array.map(async (input) => {
-        const movie_card = document.createElement('li');
-        const link = document.createElement('a');
-        const image = document.createElement('img');  
-       const title = document.createElement('h3');
+//     localStorage.setItem("peopleResults", input);    
+//    array.map(async (input) => {
+//         const movie_card = document.createElement('li');
+//         const link = document.createElement('a');
+//         const image = document.createElement('img');  
+//        const title = document.createElement('h3');
        
     
-       if (input.profile_path == null) {
-           image.src = "/images/placeholder.png";
-       } else {
-           image.src = "https://image.tmdb.org/t/p/original/" + input.profile_path; 
-       }
+//        if (input.profile_path == null) {
+//            image.src = "/images/placeholder.png";
+//        } else {
+//            image.src = "https://image.tmdb.org/t/p/original/" + input.profile_path; 
+//        }
         
-       link.href = "../anything.html?person=" + input.id;
+//        link.href = "../anything.html?person=" + input.id;
         
-        image.alt = input.original_name;
-       title.innerText = input.original_name;
-       link.append(image);
-       link.append(title);
-       movie_card.append(link);  
-        grid.append(movie_card);
-    });
+//         image.alt = input.original_name;
+//        title.innerText = input.original_name;
+//        link.append(image);
+//        link.append(title);
+//        movie_card.append(link);  
+//         grid.append(movie_card);
+//     });
     
-}
+// }
