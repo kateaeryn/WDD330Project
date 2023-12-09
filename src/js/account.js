@@ -36,14 +36,15 @@ function renderListItem(item) {
 }
 function renderList() {
   let list = localStorage.getItem("wishlist");
-  let newList = JSON.parse(list);
-  if (newList.length === 0) {
+  list = list ? localStorage.getItem("wishlist") : [];
+  if (list == "[]") {
     const watchlist = document.querySelector(".watchList");
     const message = document.createElement("h1");
     message.innerText =
       "There's nothing here . . . so sad . . . Time to find your next great movie!";
     watchlist.append(message);
   } else {
+    let newList = JSON.parse(list);
     newList.forEach((item) => {
       renderListItem(item);
     });

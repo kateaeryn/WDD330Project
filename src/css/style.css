@@ -146,7 +146,7 @@ form#searchBarSmall {
   padding: 1em;
   margin: auto;
   width: 100%;
-  max-width: 1080px;
+  max-width: 1060px;
 }
 /* index page*/
 .index {
@@ -371,7 +371,7 @@ li h3 {
 .watchList {
   display: flex;
   flex-wrap: wrap;
-  max-width: 1080px;
+  max-width: 1060px;
   background-color: var(--tertiary-color);
   margin: auto;
   color: var(--quintary-color);
@@ -388,7 +388,7 @@ li h3 {
 .watchList h1 {
   color: var(--quadrary-color);
   text-align: center;
-  padding: 0.5em;
+  padding: 0.1em;
 }
 .watchList img {
   width: 125px;
