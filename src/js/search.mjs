@@ -14,7 +14,7 @@ export async function searchInput(input) {
     div.append(grid);
     localStorage.setItem("movieResults", input);    
    array.map(async (input) => {
-       if (input.media_type == "movie" || "tv") {
+       if (input.media_type == "movie" || input.media_type == "tv") {
            const movie_card = document.createElement('li');
         const link = document.createElement('a');
         const image = document.createElement('img');  
