@@ -42,7 +42,7 @@ export async function searchInput(input) {
        
     
        if (input.profile_path == null) {
-           image.src = "/images/placeholder.png";
+           image.src = "src/images/placeholder.png";
        } else {
            image.src = "https://image.tmdb.org/t/p/original/" + input.profile_path; 
        }
