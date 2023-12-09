@@ -1,6 +1,4 @@
-import { getMovieBySearch } from "./services.mjs";
-import { getActorByName } from "./services.mjs";
-import { getMoviePosterBySearch } from "./services.mjs";
+import { getMovieBySearch, getActorByName, getMoviePosterBySearch } from "./services.mjs";
 
 
 

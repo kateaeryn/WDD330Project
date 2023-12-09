@@ -44,8 +44,8 @@ function renderList() {
       "There's nothing here . . . so sad . . . Time to find your next great movie!";
     watchlist.append(message);
   } else {
-    let newList = JSON.parse(list);
-    newList.forEach((item) => {
+    let fullList = JSON.parse(list);
+    fullList.forEach((item) => {
       renderListItem(item);
     });
   }
