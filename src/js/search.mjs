@@ -1,5 +1,5 @@
 import { getMovieBySearch, getActorByName, getMoviePosterBySearch } from "./services.mjs";
-import placeholder from "/images/placeholder.png";
+import placeholder from "/placeholder/placeholder.png";
 
 
 export async function searchInput(input) {
