@@ -1,4 +1,4 @@
-import { getMovieDetails, getCredits } from "./services.mjs";
+import { getTVDetails, getCredits } from "./services.mjs";
 import { loadHeaderFooter, alertMessage, searchNow } from "./utilities.mjs";
 
 loadHeaderFooter();
@@ -15,11 +15,10 @@ function getMovieId() {
 let details = {};
 
 export async function renderMovie(id) {
-  details = await getMovieDetails(id);
+  details = await getTVDetails(id);
   let credits = await getCredits(id);
   let crew = credits.crew;
   let cast = credits.cast;
-
   const card = document.querySelector(".detailCard");
   const title = document.querySelector(".detailTitle");
   const poster = document.querySelector(".detailPoster");
@@ -33,14 +32,14 @@ export async function renderMovie(id) {
   const runtime = document.querySelector(".runtime");
   const info = document.querySelector(".info");
 
-  title.innerHTML = details.title;
+  title.innerHTML = details.name;
   poster.src = "https://image.tmdb.org/t/p/original" + details.poster_path;
-  poster.alt = details.title;
+  poster.alt = details.name;
   tag.innerText = `"${details.tagline}"`;
   overview.innerHTML = details.overview;
-  date.innerHTML = new Date(details.release_date).toLocaleDateString("en-US");
+  date.innerHTML = new Date(details.first_air_date).getFullYear();
   genre.innerHTML = details.genres[0].name;
-  runtime.innerHTML = details.runtime + " minutes";
+  runtime.innerHTML = details.episode_run_time + " minutes";
 
   crew.forEach((member) => {
     const crewMem = document.createElement("li");
@@ -66,15 +65,15 @@ button.addEventListener("click", () => {
   let list = [];
   let movie = [
     details.id,
-    details.title,
+    details.name,
     details.poster_path,
-    details.runtime,
-    details.release_date,
+    details.episode_run_time,
+    details.first_air_date,
   ];
   list.push(movie);
   list = list.concat(JSON.parse(localStorage.getItem("wishlist") || "[]"));
   localStorage.setItem("wishlist", JSON.stringify(list));
   alertMessage(
-    `<strong>${details.title}<strong> <br> was added to your WatchList`
+    `<strong>${details.name}<strong> <br> was added to your WatchList`
   );
 });

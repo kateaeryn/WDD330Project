@@ -43,7 +43,7 @@ export async function searchInput(input) {
                 let imageUrl = posArray.file_path;
                 console.log(imageUrl);
         
-                link.href = "../movieDetail.html?tv=" + input.id;
+                link.href = "../tvDetail.html?tv=" + input.id;
                 image.src = "https://image.tmdb.org/t/p/original" + imageUrl;
                 image.alt = input.title;
                 title.innerText = input.name;

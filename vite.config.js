@@ -15,6 +15,7 @@ export default defineConfig({
         movie: resolve(__dirname, "src/movieDetail.html"),
         search: resolve(__dirname, "src/search.html"),
         grid: resolve(__dirname, "src/movie-grid.html"),
+        tv: resolve(__dirname, "src/tvDetail.html"),
       },
     },
   },

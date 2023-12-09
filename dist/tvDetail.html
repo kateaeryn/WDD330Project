@@ -6,8 +6,8 @@
     <meta name="description" content="Movie List making website" />
     
     
-    <title>Home Page</title>
-    <script type="module" crossorigin src="/assets/person-2fe9dd2d.js"></script>
+    <title>TV Series Details</title>
+    <script type="module" crossorigin src="/assets/tv-2e7bf5d0.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/utilities-d2330b11.js">
     <link rel="modulepreload" crossorigin href="/assets/services-d84aafaf.js">
     <link rel="stylesheet" href="/assets/utilities-300a48af.css">
@@ -20,13 +20,24 @@
       <button type="submit" id="searchMovie">Search Now</button>
     </form>
     <main>
-      <div class="personCard">
-        <div class="personInfo">
-          <h1 class="name"></h1>
-          <img class="detailImage" src="" alt="" />
-          <h4 class="birthday"></h4>
-          <h4 class="birthplace"></h4>
-          <p class="bio"></p>
+      <div class="detailCard">
+        <img class="detailPoster" src="" alt="" />
+        <div class="info">
+          <h1 class="detailTitle"></h1>
+          <h4 class="tagline"></h4>
+          <p class="overview"></p>
+          <p class="date"></p>
+          <p class="genre"></p>
+          <p class="runtime"></p>
+          <button class="wishlistBtn">Add to Watch List</button>
+        </div>
+        <div class="credits">
+          <ul class="crew">
+            <h3>Crew</h3>
+          </ul>
+          <ul class="cast">
+            <h3>Cast</h3>
+          </ul>
         </div>
       </div>
     </main>

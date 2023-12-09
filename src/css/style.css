@@ -320,8 +320,13 @@ li h3 {
   margin-top: 1em;
   margin-left: 1em;
 }
+.info h4 {
+  margin: 0.5em 0;
+  font-weight: 300;
+}
 .info p {
   font-size: 14pt;
+  margin: 0.5em 0;
 }
 
 .credits {
@@ -567,7 +572,11 @@ section p {
     width: 175px;
     height: 250px;
   }
-
+.detailCard {
+  max-width: 440px;
+  width: 100%;
+  margin: auto;
+}
   .info h4 {
     margin: 0.25em;
     font-weight: 300;
