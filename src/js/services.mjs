@@ -7,6 +7,7 @@ const personUrl = 'https://api.themoviedb.org/3/search/person?query=';
 const imageUrl = 'https://api.themoviedb.org/3/person/';
 const trend = 'https://api.themoviedb.org/3/trending/movie/day?include_adult=false&language=en-US';
 const genre = 'https://api.themoviedb.org/3/genre/movie/list';
+const tv = 'https://api.themoviedb.org/3/tv/';
 
 export async function getMoviesByGenre(genre) {
     const selections = {
@@ -68,7 +69,19 @@ export async function getMovieDetails(id) {
         .then(object => { return object })
         .catch(err => console.error(err));
 }
-
+export async function getTVDetails(id) {
+    const selections = {
+        method: 'GET',
+        headers: {
+            accept: 'application/json',
+            Authorization: `Bearer ${token}`,
+        },
+    };
+    return await fetch(tv + id + "?language=en-US", selections)
+        .then(response => response.json())
+        .then(object => { return object })
+        .catch(err => console.error(err));
+}
 export async function getCredits(id) {
     const selections = {
         method: 'GET',
@@ -153,6 +166,21 @@ export async function getTrending() {
     };
     
     return await fetch(trend, selections)
+        .then(res => res.json())
+        .then(object => {return object})
+        .catch(err => console.error('error:' + err));
+}
+
+export async function getTV(id) {
+    const selections = {
+        method: 'GET',
+        headers: {
+            Authorization: `Bearer ${token}`,
+            accept: 'application/json',
+        },
+    };
+    
+    return await fetch(tv + id + "/images", selections)
         .then(res => res.json())
         .then(object => {return object})
         .catch(err => console.error('error:' + err));

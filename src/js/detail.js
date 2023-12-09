@@ -15,6 +15,8 @@ function getMovieId() {
 let details = {};
 
 export async function renderMovie(id) {
+    
+  
   details = await getMovieDetails(id);
   let credits = await getCredits(id);
   let crew = credits.crew;
