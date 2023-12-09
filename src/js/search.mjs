@@ -1,5 +1,5 @@
 import { getMovieBySearch, getActorByName, getMoviePosterBySearch } from "./services.mjs";
-
+import placeholder from "/images/placeholder.png";
 
 
 export async function searchInput(input) {
@@ -42,7 +42,7 @@ export async function searchInput(input) {
        
     
        if (input.profile_path == null) {
-           image.src = "src/images/placeholder.png";
+           image.src = placeholder;
        } else {
            image.src = "https://image.tmdb.org/t/p/original/" + input.profile_path; 
        }
