@@ -1,4 +1,4 @@
-import { getTVDetails, getCredits } from "./services.mjs";
+import { getTVDetails, getTVCredits } from "./services.mjs";
 import { loadHeaderFooter, alertMessage, searchNow } from "./utilities.mjs";
 
 loadHeaderFooter();
@@ -16,7 +16,7 @@ let details = {};
 
 export async function renderMovie(id) {
   details = await getTVDetails(id);
-  let credits = await getCredits(id);
+  let credits = await getTVCredits(id);
   let crew = credits.crew;
   let cast = credits.cast;
   const card = document.querySelector(".detailCard");
@@ -31,27 +31,32 @@ export async function renderMovie(id) {
   const genre = document.querySelector(".genre");
   const runtime = document.querySelector(".runtime");
   const info = document.querySelector(".info");
-
+  
   title.innerHTML = details.name;
   poster.src = "https://image.tmdb.org/t/p/original" + details.poster_path;
   poster.alt = details.name;
   tag.innerText = `"${details.tagline}"`;
   overview.innerHTML = details.overview;
-  date.innerHTML = new Date(details.first_air_date).getFullYear();
+  date.innerHTML =
+    new Date(details.first_air_date).getFullYear() +
+    " - " +
+    new Date(details.last_air_date).getFullYear();
   genre.innerHTML = details.genres[0].name;
   runtime.innerHTML = details.episode_run_time + " minutes";
 
+  crew.length = 20;
   crew.forEach((member) => {
     const crewMem = document.createElement("li");
     crewMem.innerHTML = member.job + " : " + member.name;
     crewList.append(crewMem);
   });
+  cast.length = 20;
   cast.forEach((member) => {
     const castMem = document.createElement("li");
     castMem.innerHTML = member.name + " as " + member.character;
     castList.append(castMem);
   });
-  creditSection.append(crewList, castList);
+  creditSection.append(castList, crewList);
   info.append(title, tag, date, genre, runtime, overview, button);
   card.append(poster, info, creditSection);
   if (details.tagline == "") {
@@ -69,6 +74,7 @@ button.addEventListener("click", () => {
     details.poster_path,
     details.episode_run_time,
     details.first_air_date,
+    details.last_air_date,
     "tv",
   ];
   list.push(movie);

@@ -22,16 +22,19 @@ function renderListItem(item) {
   card.classList.add("card");
   card.setAttribute("id", item[0]);
 
-  if (item[5] == "tv") {
+  if (item[6] == "tv") {
     link.href = "../tvDetail.html?tv=" + item[0];
+    date.innerHTML =
+      new Date(item[4]).getFullYear() + " - " + new Date(item[5]).getFullYear();
   } else {
     link.href = "../movieDetail.html?movie=" + item[0];
+    date.innerHTML = new Date(item[4]).getFullYear();
   }
   poster.src = "https://image.tmdb.org/t/p/original/" + item[2];
   poster.alt = item[1];
   title.innerText = item[1];
   remove.innerHTML = "Remove From Watch List";
-  date.innerHTML = new Date(item[4]).getFullYear();
+
   time.innerHTML = item[3] + " minutes";
   link.append(poster);
   section.append(title, date, time, remove);

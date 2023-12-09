@@ -95,7 +95,19 @@ export async function getCredits(id) {
         .then(object => {return object})
         .catch(err => console.error(err));
 }
-
+export async function getTVCredits(id) {
+    const selections = {
+        method: 'GET',
+        headers: {
+            accept: 'application/json',
+            Authorization: `Bearer ${token}`,
+        },
+    };
+    return await fetch(tv + id +"/credits?language=en-US", selections)
+        .then(response => response.json())
+        .then(object => {return object})
+        .catch(err => console.error(err));
+}
 export async function getMovieBySearch(input) {
     const selections = {
         method: 'GET',

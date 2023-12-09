@@ -42,17 +42,19 @@ export async function renderMovie(id) {
   genre.innerHTML = details.genres[0].name;
   runtime.innerHTML = details.runtime + " minutes";
 
+  crew.length = 20;
   crew.forEach((member) => {
     const crewMem = document.createElement("li");
     crewMem.innerHTML = member.job + " : " + member.name;
     crewList.append(crewMem);
   });
+  cast.length = 20;
   cast.forEach((member) => {
     const castMem = document.createElement("li");
     castMem.innerHTML = member.name + " as " + member.character;
     castList.append(castMem);
   });
-  creditSection.append(crewList, castList);
+  creditSection.append(castList, crewList);
   info.append(title, tag, date, genre, runtime, overview, button);
   card.append(poster, info, creditSection);
   if (details.tagline == "") {
