@@ -1,15 +1,12 @@
-import { getMoviesByGenre } from "./services.mjs";
-import { getMoviePoster } from "./services.mjs";
+import { getMoviesByGenre, getMoviePoster, getGenre } from "./services.mjs";
 
-
-// const location = window.location.href.split('=').pop();
-// console.log(location);
 
 export default async function genreList(genre) {
     let id = "";
-    const response = await fetch("json/genreId.json")
-    const list = await response.json()
-    list.forEach(element => {
+    const response = [await getGenre()];
+    
+    console.log(response);
+    response.forEach(element => {
         if (element.name === genre) {
             id = element.id;
         } 

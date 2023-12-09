@@ -6,6 +6,7 @@ const searchUrl = 'https://api.themoviedb.org/3/search/multi?query=';
 const personUrl = 'https://api.themoviedb.org/3/search/person?query=';
 const imageUrl = 'https://api.themoviedb.org/3/person/';
 const trend = 'https://api.themoviedb.org/3/trending/movie/day?include_adult=false&language=en-US';
+const genre = 'https://api.themoviedb.org/3/genre/movie/list';
 
 export async function getMoviesByGenre(genre) {
     const selections = {
@@ -21,6 +22,22 @@ export async function getMoviesByGenre(genre) {
         .then(object => {return object})
         .catch(err => console.error('error:' + err));
 }
+
+export async function getGenre() {
+    const selections = {
+        method: 'GET',
+        headers: {
+            Authorization: `Bearer ${token}`,
+            accept: 'application/json',
+        },
+    };
+    
+    return await fetch(genre, selections)
+        .then(res => res.json())
+        .then(object => {return object})
+        .catch(err => console.error('error:' + err));
+}
+
 
 
 export async function getMoviePoster(movie){
