@@ -17,12 +17,16 @@ function renderListItem(item) {
   const section = document.createElement("section");
 
   remove.classList.add("listBtn");
-  // remove.setAttribute("id", "listBtn");
+
   remove.setAttribute("id", item[0]);
   card.classList.add("card");
   card.setAttribute("id", item[0]);
 
-  link.href = "../movieDetail.html?movie=" + item[0];
+  if (item[5] == "tv") {
+    link.href = "../tvDetail.html?tv=" + item[0];
+  } else {
+    link.href = "../movieDetail.html?movie=" + item[0];
+  }
   poster.src = "https://image.tmdb.org/t/p/original/" + item[2];
   poster.alt = item[1];
   title.innerText = item[1];

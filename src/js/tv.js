@@ -69,6 +69,7 @@ button.addEventListener("click", () => {
     details.poster_path,
     details.episode_run_time,
     details.first_air_date,
+    "tv",
   ];
   list.push(movie);
   list = list.concat(JSON.parse(localStorage.getItem("wishlist") || "[]"));
