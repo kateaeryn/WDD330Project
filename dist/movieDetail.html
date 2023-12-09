@@ -6,8 +6,8 @@
     <meta name="description" content="Movie List making website" />
     
     
-    <title>Watch LIst</title>
-    <script type="module" crossorigin src="/assets/account-6d386553.js"></script>
+    <title>Movie Details</title>
+    <script type="module" crossorigin src="/assets/movie-416c7040.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/utilities-40eb7b4b.js">
     <link rel="modulepreload" crossorigin href="/assets/services-069dd6e2.js">
     <link rel="stylesheet" href="/assets/utilities-36d50f93.css">
@@ -19,10 +19,27 @@
       <button type="submit" id="searchMovie">Search Now</button>
     </form>
     <main>
-      <div class="watchList"></div>
+      <div class="detailCard">
+        <img class="detailPoster" src="" alt="" />
+        <div class="info">
+          <h1 class="detailTitle"></h1>
+          <h4 class="tagline"></h4>
+          <p class="overview"></p>
+          <p class="date"></p>
+          <p class="genre"></p>
+          <p class="runtime"></p>
+          <button class="wishlistBtn">Add to Wish List</button>
+        </div>
+        <div class="credits">
+          <ul class="crew">
+            <h3>Crew</h3>
+          </ul>
+          <ul class="cast">
+            <h3>Cast</h3>
+          </ul>
+        </div>
+      </div>
     </main>
-    <h1 class="recommended">Trending Now</h1>
-    <div class="trending"></div>
   </body>
   <footer class="footer"></footer>
 </html>
