@@ -4,7 +4,7 @@ import { loadHeaderFooter, alertMessage, searchNow } from "./utilities.mjs";
 loadHeaderFooter();
 searchNow();
 
-const id = getMovieId("movie");
+const idNum = getMovieId("movie");
 
 const button = document.querySelector(".wishlistBtn");
 
@@ -12,13 +12,14 @@ function getMovieId() {
   const ident = window.location.href.split("=").pop();
   return ident;
 }
+let details = {};
 
-let details = await getMovieDetails(id);
-let credits = await getCredits(id);
-let crew = credits.crew;
-let cast = credits.cast;
+export async function renderMovie(id) {
+  details = await getMovieDetails(id);
+  let credits = await getCredits(id);
+  let crew = credits.crew;
+  let cast = credits.cast;
 
-export async function renderMovie(d, cr, ca) {
   const card = document.querySelector(".detailCard");
   const title = document.querySelector(".detailTitle");
   const poster = document.querySelector(".detailPoster");
@@ -31,22 +32,22 @@ export async function renderMovie(d, cr, ca) {
   const genre = document.querySelector(".genre");
   const runtime = document.querySelector(".runtime");
   const info = document.querySelector(".info");
-  console.log(d);
-  title.innerHTML = d.title;
-  poster.src = "https://image.tmdb.org/t/p/original" + d.poster_path;
-  poster.alt = d.title;
-  tag.innerText = `"${d.tagline}"`;
-  overview.innerHTML = d.overview;
-  date.innerHTML = new Date(d.release_date).toLocaleDateString("en-US");
-  genre.innerHTML = d.genres[0].name;
-  runtime.innerHTML = d.runtime + " minutes";
 
-  cr.forEach((member) => {
+  title.innerHTML = details.title;
+  poster.src = "https://image.tmdb.org/t/p/original" + details.poster_path;
+  poster.alt = details.title;
+  tag.innerText = `"${details.tagline}"`;
+  overview.innerHTML = details.overview;
+  date.innerHTML = new Date(details.release_date).toLocaleDateString("en-US");
+  genre.innerHTML = details.genres[0].name;
+  runtime.innerHTML = details.runtime + " minutes";
+
+  crew.forEach((member) => {
     const crewMem = document.createElement("li");
     crewMem.innerHTML = member.job + " : " + member.name;
     crewList.append(crewMem);
   });
-  ca.forEach((member) => {
+  cast.forEach((member) => {
     const castMem = document.createElement("li");
     castMem.innerHTML = member.name + " as " + member.character;
     castList.append(castMem);
@@ -59,7 +60,7 @@ export async function renderMovie(d, cr, ca) {
   }
 }
 
-renderMovie(details, crew, cast);
+renderMovie(idNum);
 
 button.addEventListener("click", () => {
   let list = [];

@@ -3,36 +3,37 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    <meta name="description" content="Movie List making website" />
+    
+    
     <title>Home Page</title>
-    <script type="module" crossorigin src="/assets/home-89829acb.js"></script>
-    <link
-      rel="modulepreload"
-      crossorigin
-      href="/assets/utilities-493f7812.js"
-    />
-    <link rel="stylesheet" href="/assets/utilities-f3d6fa0f.css" />
+    <script type="module" crossorigin src="/assets/home-71f4bcee.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/utilities-579cedc0.js">
+    <link rel="stylesheet" href="/assets/utilities-794ae7f9.css">
   </head>
   <body>
     <header class="header" id="main-header"></header>
-    <div class="index">
-      <div class="searchBar">
-        <h2 class="instructions">Search Movies</h2>
-        <a href="/search.html"
-          ><button type="submit" class="searchBtn">Search Now</button></a
-        >
+    <main>
+      <div class="index">
+        <div class="searchBar">
+          <h1 class="instructions">Search Movies</h1>
+          <p class="subinstructions">
+            Search by keyword, movie title, or name to find your next movie
+            night!
+          </p>
+          <form role="search" id="searchBar">
+            <input
+              type="text"
+              id="MovieInput"
+              placeholder="Title, Name or Keyword"
+            />
+            <button type="submit" id="searchMovie">Search Now</button>
+          </form>
+        </div>
       </div>
-
-      <div class="browseOption">
-        <h2 class="browseHeader">Browse Movies</h2>
-        <a href="/browse.html"
-          ><button class="browseBtn">
-            Browse <br />
-            Here
-          </button></a
-        >
-      </div>
-    </div>
+    </main>
+    <h1 class="recommended">Trending Now</h1>
+    <div class="trending"></div>
   </body>
   <footer class="footer"></footer>
 </html>

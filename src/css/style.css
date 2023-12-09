@@ -73,6 +73,9 @@ footer {
   background-color: var(--quadrary-color);
   border: 3px var(--tertiary-color);
 }
+.alert p {
+  margin-left: 0.5em;
+}
 .alert span {
   position: relative;
   align-content: flex-start;
